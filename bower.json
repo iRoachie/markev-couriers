@@ -1,0 +1,19 @@
+{
+  "name": "markevCouriers",
+  "version": "0.0.0",
+  "authors": [
+    "Kyle Roach <kroach.work@gmail.com>"
+  ],
+  "moduleType": [
+    "es6"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}
