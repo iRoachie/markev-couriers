@@ -1,5 +1,6 @@
 angular.module('markevCouriers', [
-  'ui.router'
+  'ui.router',
+  'slick'
 ])
 
 .config(function($urlRouterProvider, $locationProvider, $stateProvider) {

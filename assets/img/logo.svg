@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="875px" height="154px" viewBox="0 0 875 154" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="74.4201321%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#EEF159" offset="0%"></stop>
+            <stop stop-color="#CFCF40" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="44.8059929%" y1="63.1315512%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#4598D7" stop-opacity="0.952105978" offset="0%"></stop>
+            <stop stop-color="#4B99D8" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="17.5109456%" y1="12.0056649%" x2="78.6115836%" y2="91.6559507%" id="linearGradient-3">
+            <stop stop-color="#66A2D0" offset="0%"></stop>
+            <stop stop-color="#176AB6" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#F3EE85" offset="0%"></stop>
+            <stop stop-color="#E8EB54" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Artboard" sketch:type="MSArtboardGroup">
+            <g id="logo" sketch:type="MSLayerGroup">
+                <path d="M148.241149,52.6189076 C184.576381,62.2288066 208.823721,79.5439395 208.823721,99.3074548 C208.823721,129.513313 152.184393,154 82.316241,154 C51.11821,154 22.5578282,149.117684 0.4999995,141.023952 C19.6982533,146.101483 42.271075,149.02795 66.4249075,149.02795 C136.293059,149.02795 192.932387,124.541264 192.932387,94.3354053 C192.932387,77.6172842 175.581941,62.6511298 148.241149,52.6189076 L148.241149,52.6189076 Z" id="Oval-2-Copy-2" fill="url(#linearGradient-1)" sketch:type="MSShapeGroup" transform="translate(104.661860, 103.309454) scale(-1, 1) translate(-104.661860, -103.309454) "></path>
+                <path d="M165.417428,52.6189076 C201.75266,62.2288066 226,79.5439395 226,99.3074548 C226,129.513313 169.360672,154 99.49252,154 C68.294489,154 39.7341074,149.117684 17.6762786,141.023952 C36.8745324,146.101483 59.447354,149.02795 83.6011865,149.02795 C153.469338,149.02795 210.108666,124.541264 210.108666,94.3354053 C210.108666,77.6172842 192.75822,62.6511298 165.417428,52.6189076 L165.417428,52.6189076 Z" id="Oval-2" fill="url(#linearGradient-2)" sketch:type="MSShapeGroup"></path>
+                <ellipse id="Oval-1" fill="url(#linearGradient-3)" sketch:type="MSShapeGroup" cx="112.268499" cy="67.0367413" rx="66.8647985" ry="67.0367413"></ellipse>
+                <rect id="Rectangle-1" fill="url(#linearGradient-4)" sketch:type="MSShapeGroup" transform="translate(112.268498, 67.159744) rotate(-15.000000) translate(-112.268498, -67.159744) " x="57.9178454" y="29.028754" width="108.701306" height="76.2619808"></rect>
+                <g id="email19" transform="translate(113.477730, 67.745052) rotate(-15.000000) translate(-113.477730, -67.745052) translate(58.227730, 34.135931)" fill="#FFFFFF" sketch:type="MSShapeGroup">
+                    <path d="M1.6872553e-14,8.37300137e-15 L1.6872553e-14,67.0858146 L110.418933,67.0858146 L110.418933,8.37300137e-15 L1.6872553e-14,8.37300137e-15 L1.6872553e-14,8.37300137e-15 Z M55.2100355,41.4282734 L9.92064565,4.97613814 L100.498288,4.97613814 L55.2100355,41.4282734 L55.2100355,41.4282734 Z M37.1687549,33.5311274 L5.4291491,59.0777494 L5.4291491,7.98429674 L37.1687549,33.5311274 L37.1687549,33.5311274 Z M41.2826427,36.842854 L55.2086705,48.0519351 L69.1346985,36.842854 L100.526722,62.1096763 L9.89221125,62.1096763 L41.2826427,36.842854 L41.2826427,36.842854 Z M73.248814,33.5323784 L104.989557,7.98429674 L104.989557,59.0777494 L73.248814,33.5323784 L73.248814,33.5323784 Z" id="Shape"></path>
+                </g>
+            </g>
+            <g id="MARKEV-+-COURIERS" sketch:type="MSLayerGroup" transform="translate(236.000000, 15.000000)" font-family="Futura" fill="#000000" font-weight="420">
+                <text id="MARKEV" sketch:type="MSTextLayer" font-size="85.7090494">
+                    <tspan x="0" y="89">MARKEV</tspan>
+                </text>
+                <text id="COURIERS" sketch:type="MSTextLayer" font-size="57.1393663">
+                    <tspan x="353" y="89">COURIERS</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
