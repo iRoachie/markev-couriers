@@ -6,11 +6,12 @@ var paths = ['assets/css/*.sass', 'app/**/*.sass'];
 
 gulp.task('serve', ['sass'], function() {
     browserSync.init({
-        server: "./"
+        server: "./",
+        browser: "google chrome"
     });
 
     gulp.watch(paths, ['sass']);
-    gulp.watch("app/*.html").on('change', browserSync.reload);
+    gulp.watch("app/**/*.html").on('change', browserSync.reload);
     gulp.watch("*.html").on('change', browserSync.reload);
 });
 
