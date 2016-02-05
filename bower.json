@@ -19,5 +19,9 @@
     "angular-ui-router": "~0.2.15",
     "bootstrap": "~3.3.5",
     "slick-carousel": "~1.5.8"
+  },
+  "resolutions": {
+    "slick-carousel": "~1.5.8",
+    "angular": "~1.4.5"
   }
 }
