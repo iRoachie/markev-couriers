@@ -26,7 +26,7 @@ gulp.task('sass', function() {
   return gulp
   .src(paths)
   .pipe(sass(sassOptions).on('error', sass.logError))
-  .pipe(gulp.dest("assets/css"))
+  .pipe(gulp.dest("dist"))
   .pipe(browserSync.stream());
 });
 

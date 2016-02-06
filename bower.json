@@ -18,7 +18,8 @@
     "angular-slick": "~0.2.1",
     "angular-ui-router": "~0.2.15",
     "bootstrap": "~3.3.5",
-    "slick-carousel": "~1.5.8"
+    "slick-carousel": "~1.5.8",
+    "font-awesome": "^4.5.0"
   },
   "resolutions": {
     "slick-carousel": "~1.5.8",
