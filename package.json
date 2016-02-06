@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "dependencies": {
+    "express": "^4.13.4",
     "gulp": "^3.9.0"
   },
   "devDependencies": {
@@ -16,7 +17,7 @@
     "node": "5.1.0"
   },
   "scripts": {
-    "start": ""
+    "start": "node index.js"
   },
   "postinstall": "bower install"
 }
