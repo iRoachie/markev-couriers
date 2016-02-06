@@ -2,6 +2,7 @@
   "name": "markev_couriers",
   "version": "1.0.0",
   "description": "",
+  "main" : "index.js",
   "dependencies": {
     "express": "^4.13.4",
     "gulp": "^3.9.0"
