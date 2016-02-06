@@ -2,19 +2,24 @@
   "name": "markev_couriers",
   "version": "1.0.0",
   "description": "",
-  "repository": "https://github.com/iRoachie/markev-couriers",
+  "main": "index.js",
   "dependencies": {
-    "bower": "^1.7.7"
+    "bower": "^1.7.7",
+    "express": "^4.13.4"
   },
   "devDependencies": {
-    "browser-sync": "^2.9.1",
     "gulp": "^3.9.0",
+    "browser-sync": "^2.9.1",
     "gulp-plumber": "^1.0.1",
     "gulp-sass": "^2.0.4"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "Kyle Roach",
-  "license": "ISC"
+  "license": "ISC",
+  "engines": {
+    "node": "5.1.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "postinstall": "bower cache clean && bower install"
+  }
 }
