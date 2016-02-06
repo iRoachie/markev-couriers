@@ -1,7 +1,12 @@
+@import "../../../assets/css/variables"
+
 .home
   .slider
+    margin-bottom: 0
     .slide
       min-height: 500px
+      outline: none
+      cursor: pointer
 
       img
         max-width: 100%
@@ -31,10 +36,11 @@
             background: transparent
             border: 2px solid #fff
             border-radius: 50px
-  
+
       li.slick-active button:before
         background: white!important
 
     @media (max-width: 768px)
       .slide
         min-height: 300px
+
