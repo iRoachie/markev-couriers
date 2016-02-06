@@ -17,7 +17,7 @@
     "node": "5.1.0"
   },
   "scripts": {
-
+    "start": "gulp serve"
   },
   "postinstall": "bower install"
 }
