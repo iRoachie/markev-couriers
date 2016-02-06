@@ -2,18 +2,14 @@
   "name": "markev_couriers",
   "version": "1.0.0",
   "description": "",
-  "repository": "https://github.com/iRoachie/markev-couriers",
   "dependencies": {
-    "bower": "^1.7.7"
+    "gulp": "^3.9.0"
   },
   "devDependencies": {
     "browser-sync": "^2.9.1",
     "gulp": "^3.9.0",
     "gulp-plumber": "^1.0.1",
     "gulp-sass": "^2.0.4"
-  },
-  "scripts": {
-    "start": "gulp serve"
   },
   "author": "Kyle Roach",
   "license": "ISC"
