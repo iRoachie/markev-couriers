@@ -16,5 +16,8 @@
   "engines": {
     "node": "5.1.0"
   },
+  "scripts": {
+
+  },
   "postinstall": "bower install"
 }
