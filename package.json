@@ -7,13 +7,16 @@
   },
   "devDependencies": {
     "browser-sync": "^2.9.1",
-    "gulp": "^3.9.0",
     "gulp-plumber": "^1.0.1",
     "gulp-sass": "^2.0.4"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "Kyle Roach",
-  "license": "ISC"
+  "license": "ISC",
+  "engines": {
+    "node": "5.1.0"
+  },
+  "scripts": {
+    "start": "gulp serve"
+  },
+  "postinstall": "bower install"
 }
