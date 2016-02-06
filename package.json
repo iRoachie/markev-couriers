@@ -12,5 +12,6 @@
     "gulp-sass": "^2.0.4"
   },
   "author": "Kyle Roach",
-  "license": "ISC"
+  "license": "ISC",
+  "engine": "node 0.5.1"
 }
