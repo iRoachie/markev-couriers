@@ -18,7 +18,7 @@
     "node": "5.1.0"
   },
   "scripts": {
-    "start": "node index.js"
-  },
-  "postinstall": "bower cache clean && bower install"
+    "start": "node index.js",
+    "postinstall": "bower cache clean && bower install"
+  }
 }
