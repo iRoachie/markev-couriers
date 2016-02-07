@@ -4,9 +4,33 @@
   .slider
     margin-bottom: 0
     .slide
-      min-height: 500px
+      height: 500px
       outline: none
       cursor: pointer
+
+      .dim
+        height: 100%
+        background: rgba(0,0,0,0.3)
+        .inner
+          position: relative
+          top: 40%
+          transform: translateY(-40%)
+          padding: 40px
+          color: #fff
+
+          p
+            color: #fff
+            font-size: 50px
+            font-weight: 300
+            padding: 10px
+            font-family: "Open Sans", sans-serif
+
+          span
+            font-size: 20px
+            padding: 14px
+            background: $accent
+            width: auto
+            border-radius: 1em
 
       img
         max-width: 100%
@@ -42,5 +66,12 @@
 
     @media (max-width: 768px)
       .slide
-        min-height: 300px
-
+        height: 300px
+        .dim
+          .inner
+            padding: 10px
+            top: 30%
+            p
+              font-size: 3em
+            span
+              font-size: 1.2em
