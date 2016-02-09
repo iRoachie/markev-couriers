@@ -2,9 +2,7 @@
 
 angular
   .module('markevCouriers')
-  .directive('footer', function () {
-    return {
-      restrict: 'E',
+  .component('footer', {
       templateUrl: '/app/components/footer/footer.html'
     }
-  });
+  );

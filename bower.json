@@ -11,7 +11,7 @@
     "bower_components"
   ],
   "dependencies": {
-    "angular": "~1.4.5",
+    "angular": "^1.5.0",
     "angular-slick": "~0.2.1",
     "angular-ui-router": "~0.2.15",
     "bootstrap": "~3.3.5",
@@ -21,6 +21,6 @@
   },
   "resolutions": {
     "slick-carousel": "~1.5.8",
-    "angular": "~1.4.5"
+    "angular": "^1.5.0"
   }
 }
