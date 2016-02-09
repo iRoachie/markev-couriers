@@ -2,15 +2,9 @@
 
 angular
   .module('markevCouriers')
-  .directive('navbar', function () {
-    return {
-      restrict: 'E',
-      templateUrl: '/app/components/navbar/navbar.html',
-      controller: NavController,
-      controllerAs: "vm"
-    };
-
-    function NavController(smoothScroll) {
+  .component('navbar', {
+    templateUrl: '/app/components/navbar/navbar.html',
+    controller: function (smoothScroll) {
       this.scroll = function scroll(id) {
         var element = document.getElementById(id);
         var options = {
@@ -20,5 +14,7 @@ angular
         };
         smoothScroll(element, options);
       }
-    }
+    },
+    controllerAs: "vm"
   });
+

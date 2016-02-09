@@ -1,19 +1,7 @@
-angular.module('markevCouriers', [
-    'ui.router',
-    'slick',
-    'smoothScroll'
-  ])
+'use strict';
 
-  .directive('backImg', function () {
-    return function (scope, element, attrs) {
-      var url = attrs['backImg'];
-      element.css({
-        'background-image': 'url(' + url + ')',
-        'background-size': 'cover'
-      });
-    };
-  })
-
+angular
+  .module('markevCouriers')
   .config(function ($urlRouterProvider, $locationProvider, $stateProvider) {
     $stateProvider
       .state('home', {
