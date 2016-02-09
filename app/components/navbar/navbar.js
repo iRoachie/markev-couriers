@@ -4,7 +4,15 @@ angular
   .module('markevCouriers')
   .component('navbar', {
     templateUrl: '/app/components/navbar/navbar.html',
-    controller: function (smoothScroll) {
+    controller: function (smoothScroll, $state) {
+      this.homeClick = function() {
+        if($state.current.name === 'home') {
+          this.scroll('top');
+        } else {
+          $state.go('home')
+        }
+      };
+
       this.scroll = function scroll(id) {
         var element = document.getElementById(id);
         var options = {
