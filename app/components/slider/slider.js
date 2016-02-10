@@ -3,6 +3,5 @@
 angular
   .module('markevCouriers')
   .component('slider', {
-      templateUrl: '/app/components/slider/slider.html'
-    }
-  );
+    templateUrl: '/app/components/slider/slider.html'
+  });

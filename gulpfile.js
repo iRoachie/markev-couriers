@@ -74,8 +74,9 @@ gulp.task('serve', ['vendor', 'sass', 'scripts'], function () {
   });
 
   gulp.watch(paths, ['sass']);
+  gulp.watch('app/**/*.js', ['scripts']);
+  gulp.watch('dist/*js').on('change', browserSync.reload);
   gulp.watch('**/**.html').on('change', browserSync.reload);
-  gulp.watch('app/**/*.js', ['scripts']).on('change', browserSync.reload);
 });
 
 gulp.task('default', ['serve']);

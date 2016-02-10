@@ -6,8 +6,13 @@ angular
     $stateProvider
       .state('home', {
         url: '/',
-        templateUrl: 'app/components/home/home.html'
-      });
+        template: '<home></home>'
+      })
+      .state('about', {
+        url: '/about',
+        template: '<about></about>'
+      })
+    ;
 
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode({
