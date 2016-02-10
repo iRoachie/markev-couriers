@@ -8,16 +8,16 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" ng-click="vm.scroll('top')">
+      <a class="navbar-brand" ng-click="$ctrl.scroll('top')" data-toggle="collapse" data-target=".navbar-collapse.in">
         <img src="/assets/img/logo.svg" class="logo">
       </a>
     </div>
 
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-left">
-        <li class="navlink"><a href="#" ng-click="vm.scroll('why')" data-toggle="collapse" data-target=".navbar-collapse.in">Why Us</a></li>
-        <li class="navlink"><a href="#" ng-click="vm.scroll('services')" data-toggle="collapse" data-target=".navbar-collapse.in">Services</a></li>
-        <li class="navlink"><a href="#" ng-click="vm.scroll('customers')" data-toggle="collapse" data-target=".navbar-collapse.in">Our Customers</a></li>
+        <li class="navlink"><a href="#" ng-click="$ctrl.scroll('why')" data-toggle="collapse" data-target=".navbar-collapse.in">Why Us</a></li>
+        <li class="navlink"><a href="#" ng-click="$ctrl.scroll('services')" data-toggle="collapse" data-target=".navbar-collapse.in">Services</a></li>
+        <li class="navlink"><a href="#" ng-click="$ctrl.scroll('customers')" data-toggle="collapse" data-target=".navbar-collapse.in">Our Customers</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
