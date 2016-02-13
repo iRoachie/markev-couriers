@@ -67,7 +67,7 @@ gulp.task('scripts', function () {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('serve', ['vendor', 'sass', 'scripts'], function () {
+gulp.task('serve', ['build'], function () {
   browserSync.init({
     server: './',
     browser: 'google chrome'
