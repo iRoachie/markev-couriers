@@ -6,9 +6,7 @@
   "repository": "https://github.com/iRoachie/markev-couriers",
   "dependencies": {
     "bower": "^1.7.7",
-    "express": "^4.13.4"
-  },
-  "devDependencies": {
+    "express": "^4.13.4",
     "browser-sync": "^2.9.1",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
@@ -28,6 +26,6 @@
   },
   "scripts": {
     "start": "node index.js",
-    "postinstall": "bower install"
+    "postinstall": "bower install && gulp"
   }
 }
