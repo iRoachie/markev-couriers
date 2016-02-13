@@ -79,4 +79,6 @@ gulp.task('serve', ['vendor', 'sass', 'scripts'], function () {
   gulp.watch('**/**.html').on('change', browserSync.reload);
 });
 
-gulp.task('default', ['serve']);
+gulp.task('build', ['vendor', 'sass', 'scripts']);
+
+gulp.task('default', ['build']);
