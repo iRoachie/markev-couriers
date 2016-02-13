@@ -2,7 +2,7 @@
 
 angular
   .module('markevCouriers')
-  .config(function ($urlRouterProvider, $locationProvider, $stateProvider) {
+  .config(function ($urlRouterProvider, $locationProvider, $stateProvider, $uiViewScrollProvider) {
     $stateProvider
       .state('home', {
         url: '/',
@@ -11,12 +11,13 @@ angular
       .state('about', {
         url: '/about',
         template: '<about></about>'
-      })
-    ;
+      });
 
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode({
       enabled: true,
       requireBase: false
     });
+
+    $uiViewScrollProvider.useAnchorScroll();
   });
