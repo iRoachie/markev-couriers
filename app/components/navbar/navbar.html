@@ -15,15 +15,21 @@
 
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-left">
-        <li class="navlink"><a href="#" ng-click="$ctrl.scroll('why')" data-toggle="collapse" data-target=".navbar-collapse.in">Why Us</a></li>
-        <li class="navlink"><a href="#" ng-click="$ctrl.scroll('services')" data-toggle="collapse" data-target=".navbar-collapse.in">Services</a></li>
-        <li class="navlink"><a href="#" ng-click="$ctrl.scroll('customers')" data-toggle="collapse" data-target=".navbar-collapse.in">Our Customers</a></li>
+        <li>
+          <a class="navlink" ng-click="$ctrl.scroll('why')" data-toggle="collapse" data-target=".navbar-collapse.in">Why Us</a>
+        </li>
+        <li>
+          <a class="navlink" ng-click="$ctrl.scroll('services')" data-toggle="collapse" data-target=".navbar-collapse.in">Services</a>
+        </li>
+        <li>
+          <a class="navlink" ng-click="$ctrl.scroll('customers')" data-toggle="collapse" data-target=".navbar-collapse.in">Our Customers</a>
+        </li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li class="navlink"><a href="#" ui-sref="about" data-toggle="collapse" data-target=".navbar-collapse.in">About Us</a></li>
-        <li class="navlink"><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in">Contact Us</a></li>
-        <li class="navlink order"><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in">Place an Order</a></li>
+        <li><a class="navlink" ui-sref="about" data-toggle="collapse" data-target=".navbar-collapse.in">About Us</a></li>
+        <li><a class="navlink" data-toggle="collapse" data-target=".navbar-collapse.in">Contact Us</a></li>
+        <li><a class="navlink open" ui-sref="open-account" data-toggle="collapse" data-target=".navbar-collapse.in">Open an Account</a></li>
       </ul>
     </div>
   </div>
