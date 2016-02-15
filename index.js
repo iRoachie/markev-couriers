@@ -9,7 +9,7 @@ var nodemailer = require('nodemailer');
 
 app.use(bodyParser.json());
 app.use(cors());
-app.set('port', (process.env.PORT || 80));
+app.set('port', (process.env.PORT || 5000));
 
 app.use('/dist', express.static(__dirname + '/dist'));
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
@@ -27,7 +27,7 @@ app.post('/email', function(req) {
   var transporter = nodemailer.createTransport({
     host: process.env.HOST,
     port: 465,
-    secure: true, // use SSL
+    secure: true,
     auth: {
       user: process.env.SENDER,
       pass: process.env.PASS
@@ -47,6 +47,7 @@ app.post('/email', function(req) {
       return console.log(error);
     }
 
+    console.log('Message sent');
   });
 });
 
