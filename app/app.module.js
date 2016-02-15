@@ -3,5 +3,6 @@
 angular.module('markevCouriers', [
   'ui.router',
   'slick',
-  'smoothScroll'
+  'smoothScroll',
+  'ngMessages'
 ]);

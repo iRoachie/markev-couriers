@@ -18,7 +18,8 @@ var bowerjs = [
   'bower_components/angular-ui-router/release/angular-ui-router.min.js',
   'bower_components/slick-carousel/slick/slick.min.js',
   'bower_components/angular-slick/dist/slick.js',
-  'bower_components/ngSmoothScroll/lib/angular-smooth-scroll.js'
+  'bower_components/ngSmoothScroll/lib/angular-smooth-scroll.js',
+  'bower_components/angular-messages/angular-messages.min.js'
 ];
 
 var bowercss = [

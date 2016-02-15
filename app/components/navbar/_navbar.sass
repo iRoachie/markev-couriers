@@ -15,32 +15,26 @@
       background-color: $primary
 
   .navbar-brand
-    padding-top: 0
-    padding-bottom: 0
-    padding-right: 20px
+    padding: 0 15px
+    display: flex
+    flex-direction: column
+    justify-content: center
 
     .logo
       height: 40px
-      position: relative
-      top: 50%
       cursor: pointer
-      transform: translateY(-50%)
-      -webkit-transform: translateY(-50%)
 
   .navlink
-    font-size: 14px
+    cursor: pointer
+    font-size: 16px
+    transition: color ease-in-out .2s
 
-    a
-      transition: color ease-in-out .2s
-
-  .navlink:not(.order)
-    a
-      color: rgb(98,97,97)
-
-    a:hover
-      color: $primary
-
-  .order
-    a
-      font-weight: 600
+    &:hover
       color: $primary!important
+
+    &:focus
+      color: rgb(98,97,97)!important
+
+  .open
+    font-weight: 600
+    color: $primary!important
