@@ -4,7 +4,7 @@ angular
   .module('markevCouriers')
   .component('open', {
     templateUrl: 'app/components/openAccount/openAccount.html',
-    controller: function() {
+    controller: function(EmailService) {
       this.info = {};
       this.submitText = 'SUBMIT';
 
@@ -32,6 +32,8 @@ angular
 
       this.submit = function() {
         this.submitText = 'SENT';
+        console.log(this.info);
+        EmailService.sendEmail(this.info);
       }
     }
   });

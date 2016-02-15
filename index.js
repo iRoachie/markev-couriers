@@ -1,8 +1,15 @@
+require('dotenv').config({silent: true});
+
 var express = require('express');
 var app = express();
 var path = require('path');
+var bodyParser = require('body-parser');
+var cors = require('cors');
+var nodemailer = require('nodemailer');
 
-app.set('port', (process.env.PORT || 5000));
+app.use(bodyParser.json());
+app.use(cors());
+app.set('port', (process.env.PORT || 80));
 
 app.use('/dist', express.static(__dirname + '/dist'));
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
@@ -12,6 +19,35 @@ app.use('/favicons', express.static(__dirname + '/favicons'));
 
 app.get('*', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
+});
+
+app.post('/email', function(req) {
+  console.log(req.body.info);
+
+  var transporter = nodemailer.createTransport({
+    host: process.env.HOST,
+    port: 465,
+    secure: true, // use SSL
+    auth: {
+      user: process.env.SENDER,
+      pass: process.env.PASS
+    }
+  });
+
+  var mailOptions = {
+    from: 'Fred Foo <	' + process.env.SENDER + '>', // sender address
+    to: process.env.RECEIVER,
+    subject: 'Hello ✔', // Subject line
+    text: 'Hello world', // plaintext body
+    html: '<b>Hello world</b>' // html body
+  };
+
+  transporter.sendMail(mailOptions, function(error){
+    if(error){
+      return console.log(error);
+    }
+
+  });
 });
 
 app.listen(app.get('port'), function() {
