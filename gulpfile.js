@@ -71,7 +71,8 @@ gulp.task('scripts', function () {
 gulp.task('serve', ['build'], function () {
   browserSync.init({
     server: './',
-    browser: 'google chrome'
+    browser: 'google chrome',
+    notify: false
   });
 
   gulp.watch(paths, ['sass']);
