@@ -21,8 +21,8 @@ app.get('*', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
 
-app.post('/email', function(req) {
-  console.log(req.body.info);
+app.post('/email', function(req, res) {
+  var info = req.body.info;
 
   var transporter = nodemailer.createTransport({
     host: process.env.HOST,
@@ -35,11 +35,57 @@ app.post('/email', function(req) {
   });
 
   var mailOptions = {
-    from: 'Fred Foo <	' + process.env.SENDER + '>', // sender address
+    from: 'Markev Couriers Info <	' + process.env.SENDER + '>', // sender address
     to: process.env.RECEIVER,
-    subject: 'Hello ✔', // Subject line
-    text: 'Hello world', // plaintext body
-    html: '<b>Hello world</b>' // html body
+    subject: '[Markev Couriers] New Client Signup', // Subject line
+    html:
+      `
+        <style type="text/css">
+          .tg  {border-collapse:collapse;border-spacing:0;}
+          .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border: 1px solid;overflow:hidden;word-break:normal;}
+          .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border: 1px solid;overflow:hidden;word-break:normal;}
+          .tg .tg-9hbo{font-weight:bold;vertical-align:top}
+          .tg .tg-yw4l{vertical-align:top}
+        </style>
+        <table class="tg">
+          <tr>
+            <td class="tg-9hbo">Name</td>
+            <td class="tg-yw4l">${req.body.info['firstName']} ${req.body.info['lastName']}</td>
+          </tr>
+          <tr>
+            <td class="tg-9hbo">Email</td>
+            <td class="tg-yw4l">${req.body.info['email']}</td>
+          </tr>
+          <tr>
+            <td class="tg-9hbo">Phone</td>
+            <td class="tg-yw4l">${req.body.info['phone']}</td>
+          </tr>
+          <tr>
+            <td class="tg-9hbo">Company</td>
+            <td class="tg-yw4l">${req.body.info['company']}</td>
+          </tr>
+          <tr>
+            <td class="tg-9hbo">Accounts Payable Contact</td>
+            <td class="tg-yw4l">${req.body.info['accountsPayable']}</td>
+          </tr>
+          <tr>
+            <td class="tg-9hbo">Street Address</td>
+            <td class="tg-yw4l">${req.body.info['address']}</td>
+          </tr>
+          <tr>
+            <td class="tg-9hbo">Parish</td>
+            <td class="tg-yw4l">${req.body.info['parish']}</td>
+          </tr>
+          <tr>
+            <td class="tg-9hbo">Fax</td>
+            <td class="tg-yw4l">${req.body.info['fax']}</td>
+          </tr>
+          <tr>
+            <td class="tg-9hbo">Heard About Us</td>
+            <td class="tg-yw4l">${req.body.info['heardAbout']}</td>
+          </tr>
+        </table>
+      `
   };
 
   transporter.sendMail(mailOptions, function(error){
@@ -48,6 +94,7 @@ app.post('/email', function(req) {
     }
 
     console.log('Message sent');
+    res.send();
   });
 });
 
