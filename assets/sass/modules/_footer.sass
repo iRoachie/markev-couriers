@@ -1,7 +1,7 @@
-@import "../../../assets/sass/variables"
+@import "../variables"
 
-footer
-  .copyright
+.footer
+  &__copyright
     color: #939c9e
     font-size: 12px
 
@@ -11,11 +11,15 @@ footer
       color: black
       font-weight: 600
 
-  .design
+  &__author
     font-size: 12px
     color: black
 
-  .social
+  &__logo
+    margin-top: 20px
+    width: 300px
+
+  &__social
     margin-top: 30px
 
     a
@@ -23,27 +27,20 @@ footer
 
       &:hover
         color: $primary
+
     .fa
       font-size: 36px
       margin: 0 20px
 
-  .logo-brand
-    margin-top: 20px
-    width: 300px
-
-  .hours,
-  .contact
+  &__hours,
+  &__contact
     margin-top: 30px
 
-    .header
+    &__header
       font-size: 18px
       color: $primary
       font-weight: 600
       margin-bottom: 20px
-
-    .day
-      font-weight: 600
-      color: black
 
     .fa
       margin-top: 4px
@@ -53,16 +50,24 @@ footer
       &.fa-mobile
         font-size: 36px
 
-  .contact
-    article
+  &__hours
+    .day
+      font-weight: 600
+      color: black
+
+  &__contact
+    &__item
       margin: 20px 0
+
       .col-xs-2,
       .col-xs-10
         padding-left: 0
-      .field
-        font-weight: 600
-        color: #000
-        font-size: 18px
+
+    &__field
+      font-weight: 600
+      color: #000
+      font-size: 18px
+
     p
       margin-bottom: 0
 

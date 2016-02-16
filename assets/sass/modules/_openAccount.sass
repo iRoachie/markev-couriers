@@ -1,0 +1,60 @@
+@import "../variables"
+
+.open-account
+  .btn.btn-primary
+    transition: 0.5s
+
+  label
+    margin-bottom: 7px
+
+  &__form-section
+    background: #F0F3F8
+    color: #000
+
+    &__header
+      padding: 10px 0 20px
+
+  &__form
+    padding: 30px 10px
+    border-radius: 3px
+    border: 1px solid white
+    margin-bottom: 40px
+    background: white
+
+    &__header
+      font-size: 20px
+      margin-top: 15px
+      margin-bottom: 0
+      font-weight: 600
+
+    button
+      margin-top: 30px
+      width: 100%
+      height: 38px
+
+      &:focus
+         outline: none
+
+    label.radio-inline
+      margin-right: 16px
+
+  @media (max-width: 1170px)
+    &__form
+      padding: 15px
+      border: none!important
+      margin-left: -15px
+      margin-right: -15px
+
+    .form-row
+      flex-direction: column
+
+      .form-group
+        margin: 10px 0!important
+
+        label.radio-inline
+          margin-left: 0
+          margin-bottom: 20px
+
+  @media (max-width: 768px)
+    &__form
+      border-radius: 0!important

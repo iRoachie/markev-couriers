@@ -1,0 +1,47 @@
+@import "../variables"
+
+.navbar-default
+  .navbar-toggle
+    border: none
+
+    &:focus
+      background: white
+
+    .icon-bar
+      background-color: $primary
+
+  & .navbar-nav>li>a
+    color: rgb(98,97,97)
+
+    &:hover
+      color: $primary
+
+    &:focus
+      color: rgb(98,97,97)
+
+    &.open
+      font-weight: 600
+      color: $primary
+
+.navbar
+  background-color: white
+  border: none
+  padding-top: 5px
+  margin-bottom: 0
+  min-height: 60px
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2)
+
+  &-brand
+    padding: 0 15px
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+    .logo
+      height: 40px
+      cursor: pointer
+
+  &__link
+    cursor: pointer
+    font-size: 16px
+    transition: color ease-in-out .2s
