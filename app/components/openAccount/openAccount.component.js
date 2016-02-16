@@ -5,7 +5,12 @@ angular
   .component('open', {
     templateUrl: 'app/components/openAccount/openAccount.html',
     controller: function(EmailService) {
-      this.info = {};
+      this.info = {
+        parish: 'Christ Church',
+        heardAbout: '',
+        fax: ''
+      };
+
       this.submitText = 'SUBMIT';
 
       this.parishes =
@@ -32,7 +37,6 @@ angular
 
       this.submit = function() {
         this.submitText = 'SENT';
-        console.log(this.info);
         EmailService.sendEmail(this.info);
       }
     }

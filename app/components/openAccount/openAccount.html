@@ -19,7 +19,7 @@
         <div class="col-md-12">
           <div class="inner">
             <h3>New Account Form</h3>
-            <p>Enter your details below and we'll add you to the system.</p>
+            <p>Enter your details below and we'll add you to the system. <span style="color: #a94442">Boxes in red are required.</span></p>
           </div>
         </div>
       </div>
@@ -28,40 +28,40 @@
         <div class="col-md-8 col-xs-12">
           <form class="open__form" name="accountForm" novalidate>
             <div class="form-row">
-              <div class="form-group" ng-class="{'has-error': accountForm.firstName.$error && accountForm.firstName.$touched, 'has-success': accountForm.firstName.$valid}">
+              <div class="form-group" ng-class="{'has-error': accountForm.firstName.$error, 'has-success': accountForm.firstName.$valid}">
                 <label for="firstName">First name</label>
                 <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First name" ng-model="$ctrl.info.firstName" required>
               </div>
-              <div class="form-group" ng-class="{'has-error': accountForm.lastName.$error && accountForm.lastName.$touched, 'has-success': accountForm.lastName.$valid}">
+              <div class="form-group" ng-class="{'has-error': accountForm.lastName.$error, 'has-success': accountForm.lastName.$valid}">
                 <label for="lastName">Last name</label>
                 <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last name" ng-model="$ctrl.info.lastName" required>
               </div>
             </div>
 
             <div class="form-row">
-              <div class="form-group" ng-class="{'has-error': accountForm.email.$error && accountForm.email.$touched, 'has-success': accountForm.email.$valid}">
+              <div class="form-group" ng-class="{'has-error': accountForm.email.$error, 'has-success': accountForm.email.$valid}">
                 <label for="email">Email address</label>
                 <input type="email" class="form-control" id="email" name="email" placeholder="Email address" ng-model="$ctrl.info.email" required>
               </div>
-              <div class="form-group">
+              <div class="form-group" ng-class="{'has-error': accountForm.phone.$error, 'has-success': accountForm.phone.$valid}">
                 <label for="phone">Phone</label>
-                <input type="text" class="form-control" id="phone" placeholder="Phone" ng-model="$ctrl.info.phone">
+                <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone" ng-model="$ctrl.info.phone" required>
               </div>
             </div>
 
             <div class="form-row">
-              <div class="form-group" ng-class="{'has-error': accountForm.company.$error && accountForm.company.$touched, 'has-success': accountForm.company.$valid}">
+              <div class="form-group" ng-class="{'has-error': accountForm.company.$error, 'has-success': accountForm.company.$valid}">
                 <label for="company">Company</label>
                 <input type="text" class="form-control" id="company" name="company" placeholder="Company" ng-model="$ctrl.info.company" required>
               </div>
-              <div class="form-group" ng-class="{'has-error': accountForm.accountsPayable.$error && accountForm.accountsPayable.$touched, 'has-success': accountForm.accountsPayable.$valid}">
+              <div class="form-group" ng-class="{'has-error': accountForm.accountsPayable.$error, 'has-success': accountForm.accountsPayable.$valid}">
                 <label for="accounts-payable">Accounts Payable Contact</label>
                 <input type="text" class="form-control" id="accounts-payable" name="accountsPayable" placeholder="Accounts Payable Contact" ng-model="$ctrl.info.accountsPayable" required>
               </div>
             </div>
 
             <div class="form-row">
-              <div class="form-group" ng-class="{'has-error': accountForm.address.$error && accountForm.address.$touched, 'has-success': accountForm.address.$valid}">
+              <div class="form-group" ng-class="{'has-error': accountForm.address.$error, 'has-success': accountForm.address.$valid}">
                 <label for="address">Street Adress</label>
                 <input type="text" class="form-control" id="address" name="address" placeholder="Street Adress" ng-model="$ctrl.info.address" required>
               </div>
@@ -70,24 +70,13 @@
             <div class="form-row">
               <div class="form-group">
                 <label for="parish">Parish</label>
-                <select class="form-control" id="parish" ng-model="$ctrl.info.parish" ng-init="$ctrl.info.parish = 'Christ Church'">
+                <select class="form-control" id="parish" ng-model="$ctrl.info.parish">
                   <option ng-value="parish" ng-repeat="parish in $ctrl.parishes">{{parish}}</option>
                 </select>
               </div>
-              <div class="form-group" ng-class="{'has-error': accountForm.postCode.$error && accountForm.postCode.$touched, 'has-success': accountForm.postCode.$valid}">
-                <label for="postal code">Postal code</label>
-                <input type="text" class="form-control" id="postal code" name="postCode" placeholder="Postal code" ng-model="$ctrl.info.postCode" required>
-              </div>
-            </div>
-
-            <div class="form-row">
               <div class="form-group">
                 <label for="fax">Fax number</label>
                 <input type="text" class="form-control" id="fax" placeholder="Fax number" ng-model="$ctrl.info.fax">
-              </div>
-              <div class="form-group">
-                <label for="tax">Tax ID</label>
-                <input type="text" class="form-control" id="tax" placeholder="Tax ID" ng-model="$ctrl.info.tax">
               </div>
             </div>
 
@@ -107,7 +96,7 @@
 
             <div class="form-row">
               <div class="form-group">
-                <button type="button" class="btn btn-primary" ng-class="{'btn-success': $ctrl.submitText!=='SUBMIT'}" ng-click="$ctrl.submit()" ng-disabled="$ctrl.submitText !== 'SUBMIT'">{{$ctrl.submitText}}</button>
+                <button type="button" class="btn btn-primary" ng-class="{'btn-success': $ctrl.submitText!=='SUBMIT'}" ng-click="$ctrl.submit()" ng-disabled="$ctrl.submitText !== 'SUBMIT' || accountForm.$invalid">{{$ctrl.submitText}}</button>
               </div>
             </div>
           </form>
