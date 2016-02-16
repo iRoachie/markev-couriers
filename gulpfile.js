@@ -45,11 +45,11 @@ gulp.task('vendor', function () {
 gulp.task('sass', function () {
   var sassOptions = {
     errLogToConsole: true,
-    outputStyle: 'compressed',
+    outputStyle: 'expanded',
     indentedSyntax: true
   };
 
-  return gulp.src('assets/sass/main.sass')
+  return gulp.src('assets/sass/index.sass')
     .pipe(maps.init())
       .pipe(sass(sassOptions).on('error', sass.logError))
       .pipe(autoprefixer())
