@@ -12,10 +12,10 @@ function EmailService($http, $location) {
   service.contactUs = contactUs;
 
   function sendEmail(info) {
-    $http.post(host + '/email', {info: info});
+    $http.post(host + '/api/open-account', info);
   }
 
   function contactUs(info) {
-    $http.post(host + '/contact', info);
+    $http.post(host + '/api/contact', info);
   }
 }
