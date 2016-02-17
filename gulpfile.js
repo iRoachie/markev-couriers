@@ -10,6 +10,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync').create();
 var jade = require('gulp-jade');
 var rename = require('gulp-rename');
+var util = require('gulp-util');
 
 var paths = ['**/**/*.sass'];
 
@@ -63,7 +64,7 @@ gulp.task('sass', function () {
 gulp.task('jade', function() {
   gulp.src(['app/components/**/*.jade'])
     .pipe(rename(function(path){path.dirname='';}))
-    .pipe(jade())
+    .pipe(jade().on('error', util.log))
     .pipe(gulp.dest('dist/'));
 });
 
