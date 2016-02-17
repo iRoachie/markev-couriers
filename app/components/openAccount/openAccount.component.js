@@ -6,12 +6,8 @@ angular
     templateUrl: 'dist/openAccount.html',
     controller: function(EmailService) {
       this.info = {
-        parish: 'Christ Church',
-        heardAbout: '',
-        fax: ''
+        parish: 'Christ Church'
       };
-
-      this.submitText = 'SUBMIT';
 
       this.parishes =
         [

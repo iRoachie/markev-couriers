@@ -12,14 +12,14 @@
     .container
       .row
         .col-md-12
-          .open-account__form-section__header
+          .open-account__form-section__header.text-center
             h3 New Account Form
             p
-              | Enter your details below and we'll add you to the system.
+              | Enter your details below and we'll add you to the system.&nbsp;
               span(style="color: #a94442") Boxes in red are required.
 
       .row
-        .col-md-8.col-xs-12
+        .col-xs-12.col-md-8.col-md-offset-2
           form.open-account__form(name="accountForm", novalidate)
             .form-row
               .form-group(ng-class="{'has-error': accountForm.firstName.$error, 'has-success': accountForm.firstName.$valid}")
@@ -75,4 +75,4 @@
 
             .form-row
               .form-group
-                button.btn.btn-primary(type="button", ng-class="{'btn-success': $ctrl.submitText!=='SUBMIT'}", ng-click="$ctrl.submit()", ng-disabled="$ctrl.submitText !== 'SUBMIT' || accountForm.$invalid") {{$ctrl.submitText}}
+                button.btn.btn-primary(type="button", ng-init="$ctrl.submitText='SUBMIT'", ng-class="{'btn-success': $ctrl.submitText!=='SUBMIT'}", ng-click="$ctrl.submit()", ng-disabled="$ctrl.submitText !== 'SUBMIT' || accountForm.$invalid") {{$ctrl.submitText}}

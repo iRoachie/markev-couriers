@@ -47,7 +47,7 @@ gulp.task('vendor', function () {
 gulp.task('sass', function () {
   var sassOptions = {
     errLogToConsole: true,
-    outputStyle: 'expanded',
+    outputStyle: 'compressed',
     indentedSyntax: true
   };
 
