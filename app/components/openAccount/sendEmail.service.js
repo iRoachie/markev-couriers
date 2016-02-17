@@ -16,6 +16,6 @@ function EmailService($http, $location) {
   }
 
   function contactUs(info) {
-    $http.post(host + '/contact', {info:info});
+    $http.post(host + '/contact', info);
   }
 }

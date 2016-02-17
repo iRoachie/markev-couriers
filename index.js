@@ -113,7 +113,7 @@ app.post('/contact', function(req, res) {
       `
         <table rules="all" style="border-color:#666" cellpadding="10">
           <tbody>
-            <tr style="background-color:#166AB6;color:white;font-size:22px">
+            <tr style="background-color:#166AB6;color:white;font-size:14px">
               <td colspan="2">Client Contact Query</td>
             </tr>
             <tr>

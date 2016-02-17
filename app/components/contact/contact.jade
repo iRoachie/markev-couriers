@@ -44,7 +44,7 @@
                 p.open-account__form__header Questions, Queries, Concerns
 
             .form-row
-              .form-group(ng-class="{'has-error': contactForm.memo.$error, 'has-success': contactForm.memo.$valid}")
+              .form-group(ng-class="{'has-error': contactForm.message.$error, 'has-success': contactForm.message.$valid}")
                 label.memo(for="message")
                   textarea#message.form-control(name="message", ng-model="$ctrl.info.message", required)
 
