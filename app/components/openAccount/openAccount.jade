@@ -1,0 +1,78 @@
+.container-fluid.open-account
+  .row
+    .brand-image(back-img="/assets/img/forms.jpg")
+      .overlay
+        h2.text-center.header Open an Account
+
+  .row.brand-sentence--black
+    .col-md-12
+      h2.text-center Register Your Business With Us
+
+  .row.open-account__form-section
+    .container
+      .row
+        .col-md-12
+          .open-account__form-section__header
+            h3 New Account Form
+            p
+              | Enter your details below and we'll add you to the system.
+              span(style="color: #a94442") Boxes in red are required.
+
+      .row
+        .col-md-8.col-xs-12
+          form.open-account__form(name="accountForm", novalidate)
+            .form-row
+              .form-group(ng-class="{'has-error': accountForm.firstName.$error, 'has-success': accountForm.firstName.$valid}")
+                label(for="firstName") First name
+                input#firstName.form-control(type="text", name="firstName", placeholder="First name", ng-model="$ctrl.info.firstName", required)
+
+              .form-group(ng-class="{'has-error': accountForm.lastName.$error, 'has-success': accountForm.lastName.$valid}")
+                label(for="lastName") Last name
+                input#lastName.form-control(type="text", name="lastName", placeholder="Last name", ng-model="$ctrl.info.lastName", required)
+
+            .form-row
+              .form-group(ng-class="{'has-error': accountForm.email.$error, 'has-success': accountForm.email.$valid}")
+                label(for="email") Email address
+                input#email.form-control(type="email", name="email", placeholder="Email address", ng-model="$ctrl.info.email", required)
+
+              .form-group(ng-class="{'has-error': accountForm.phone.$error, 'has-success': accountForm.phone.$valid}")
+                label(for="phone") Phone
+                input#phone.form-control(type="text", name="phone", placeholder="Phone", ng-model="$ctrl.info.phone", required)
+
+            .form-row
+              .form-group(ng-class="{'has-error': accountForm.company.$error, 'has-success': accountForm.company.$valid}")
+                label(for="company") Company
+                input#company.form-control(type="text", name="company", placeholder="Company", ng-model="$ctrl.info.company", required)
+
+              .form-group(ng-class="{'has-error': accountForm.accountsPayable.$error, 'has-success': accountForm.accountsPayable.$valid}")
+                label(for="accounts-payable") Accounts Payable Contact
+                input#accounts-payable.form-control(type="text", name="accountsPayable", placeholder="Accounts Payable Contact", ng-model="$ctrl.info.accountsPayable", required)
+
+            .form-row
+              .form-group(ng-class="{'has-error': accountForm.address.$error, 'has-success': accountForm.address.$valid}")
+                label(for="address") Street Adress
+                input#address.form-control(type="text", name="address", placeholder="Street Adress", ng-model="$ctrl.info.address", required)
+
+            .form-row
+              .form-group
+                label(for="parish") Parish
+                select#parish.form-control(ng-model="$ctrl.info.parish")
+                  option(ng-value="parish", ng-repeat="parish in $ctrl.parishes") {{parish}}
+
+              .form-group
+                label(for="fax") Fax number
+                input#fax.form-control(type="text", placeholder="Fax number", ng-model="$ctrl.info.fax")
+
+            .form-row
+              .form-group
+                p.open-account__form__header How'd You Hear About Us?
+
+            .form-row
+              .form-group
+                label.radio-inline(ng-repeat="item in $ctrl.hearAbout")
+                  input(type="radio", name="inlineRadioOptions", ng-value="item", ng-model="$ctrl.info.heardAbout")
+                  | {{item}}
+
+            .form-row
+              .form-group
+                button.btn.btn-primary(type="button", ng-class="{'btn-success': $ctrl.submitText!=='SUBMIT'}", ng-click="$ctrl.submit()", ng-disabled="$ctrl.submitText !== 'SUBMIT' || accountForm.$invalid") {{$ctrl.submitText}}

@@ -8,6 +8,8 @@ var maps = require('gulp-sourcemaps');
 var ngAnnotate = require('gulp-ng-annotate');
 var autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync').create();
+var jade = require('gulp-jade');
+var rename = require('gulp-rename');
 
 var paths = ['**/**/*.sass'];
 
@@ -58,6 +60,13 @@ gulp.task('sass', function () {
     .pipe(browserSync.stream());
 });
 
+gulp.task('jade', function() {
+  gulp.src(['app/components/**/*.jade'])
+    .pipe(rename(function(path){path.dirname=''}))
+    .pipe(jade())
+    .pipe(gulp.dest('dist/'));
+});
+
 gulp.task('scripts', function () {
   gulp.src(['app/app.module.js', 'app/**/*.js'])
     .pipe(maps.init())
@@ -71,15 +80,17 @@ gulp.task('scripts', function () {
 gulp.task('serve', ['build'], function () {
   browserSync.init({
     server: './',
-    browser: 'google chrome'
+    browser: 'google chrome canary',
+    notify: false
   });
 
   gulp.watch(paths, ['sass']);
   gulp.watch('app/**/*.js', ['scripts']);
+  gulp.watch('app/components/**/*.jade', ['jade']);
   gulp.watch('dist/*js').on('change', browserSync.reload);
   gulp.watch('**/**.html').on('change', browserSync.reload);
 });
 
-gulp.task('build', ['vendor', 'sass', 'scripts']);
+gulp.task('build', ['vendor', 'sass', 'scripts', 'jade']);
 
 gulp.task('default', ['build']);

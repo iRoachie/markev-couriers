@@ -3,6 +3,6 @@
 angular
   .module('markevCouriers')
   .component('footer', {
-      templateUrl: '/app/components/footer/footer.html'
+      templateUrl: 'dist/footer.html'
     }
   );
