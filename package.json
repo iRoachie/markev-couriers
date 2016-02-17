@@ -19,11 +19,12 @@
     "gulp-jade": "^1.1.0",
     "gulp-ng-annotate": "^1.1.0",
     "gulp-plumber": "^1.0.1",
+    "gulp-rename": "latest",
     "gulp-sass": "^2.0.4",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.2",
-    "nodemailer": "^2.1.0",
-    "gulp-rename": "latest"
+    "gulp-util": "^3.0.7",
+    "nodemailer": "^2.1.0"
   },
   "author": "Kyle Roach",
   "license": "ISC",
