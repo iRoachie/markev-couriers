@@ -1,4 +1,4 @@
-.container-fluid.about
+.container-fluid.contact-us
   .row
     .brand-image(back-img="/assets/img/contact-us.jpg")
       .overlay
@@ -7,3 +7,47 @@
   .row.brand-sentence--black
     .col-md-12
       h2.text-center Get in Touch with Us
+
+  .row.contact-us__form-section
+    .container
+      .row
+        .col-md-12
+          .contact-us__form-section__header.text-center
+            h3 Contact Form
+            p
+              | Tell us what you'd like to talk about and we'll get back to you as soon as possible.&nbsp;
+              span(style="color: #a94442") Boxes in red are required.
+
+      .row
+        .col-xs-12.col-sm-8.col-sm-offset-2
+          form.contact-us__form(name="contactForm", novalidate)
+            .form-row
+              .form-group(ng-class="{'has-error': contactForm.name.$error, 'has-success': contactForm.name.$valid}")
+                label(for="name") Name
+                input#name.form-control(type="text", name="name", placeholder="Name", ng-model="$ctrl.info.name", required)
+
+              .form-group(ng-class="{'has-error': contactForm.email.$error, 'has-success': contactForm.email.$valid}")
+                label(for="email") Email
+                input#email.form-control(type="email", name="email", placeholder="Email", ng-model="$ctrl.info.email", required)
+
+            .form-row
+              .form-group(ng-class="{'has-error': contactForm.phone.$error, 'has-success': contactForm.phone.$valid}")
+                label(for="phone") Phone
+                input#phone.form-control(type="text", name="phone", placeholder="Phone", ng-model="$ctrl.info.phone", required)
+
+              .form-group
+                label(for="company") Company
+                input#company.form-control(type="text", placeholder="Company", ng-model="$ctrl.info.company")
+
+            .form-row
+              .form-group
+                p.open-account__form__header Questions, Queries, Concerns
+
+            .form-row
+              .form-group(ng-class="{'has-error': contactForm.memo.$error, 'has-success': contactForm.memo.$valid}")
+                label.memo(for="message")
+                  textarea#message.form-control(name="message", ng-model="$ctrl.info.message", required)
+
+            .form-row
+              .form-group
+                button.btn.btn-primary(type="button", ng-init="$ctrl.submitText='SUBMIT'", ng-class="{'btn-success': $ctrl.submitText!=='SUBMIT'}", ng-click="$ctrl.submit()", ng-disabled="$ctrl.submitText !== 'SUBMIT' || contactForm.$invalid") {{$ctrl.submitText}}

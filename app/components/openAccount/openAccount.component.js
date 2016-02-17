@@ -11,8 +11,6 @@ angular
         fax: ''
       };
 
-      this.submitText = 'SUBMIT';
-
       this.parishes =
         [
           'Christ Church',

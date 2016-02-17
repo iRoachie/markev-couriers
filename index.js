@@ -21,23 +21,23 @@ app.get('*', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
 
+var transporter = nodemailer.createTransport({
+  host: process.env.HOST,
+  port: 465,
+  secure: true,
+  auth: {
+    user: process.env.SENDER,
+    pass: process.env.PASS
+  }
+});
+
 app.post('/email', function(req, res) {
   var info = req.body.info;
 
-  var transporter = nodemailer.createTransport({
-    host: process.env.HOST,
-    port: 465,
-    secure: true,
-    auth: {
-      user: process.env.SENDER,
-      pass: process.env.PASS
-    }
-  });
-
   var mailOptions = {
-    from: 'Markev Couriers Info <	' + process.env.SENDER + '>', // sender address
+    from: 'Markev Couriers Info <	' + process.env.SENDER + '>',
     to: process.env.RECEIVER,
-    subject: '[Markev Couriers] New Client Signup', // Subject line
+    subject: '[Markev Couriers] New Client Signup',
     html:
       `
         <style type="text/css">
@@ -84,6 +84,60 @@ app.post('/email', function(req, res) {
             <td class="tg-9hbo">Heard About Us</td>
             <td class="tg-yw4l">${req.body.info['heardAbout']}</td>
           </tr>
+        </table>
+      `
+  };
+
+  transporter.sendMail(mailOptions, function(error){
+    if(error){
+      return console.log(error);
+    }
+
+    console.log('Message sent');
+    res.send();
+  });
+});
+
+app.post('/contact', function(req, res) {
+  var info = req.body;
+
+  if(!info.hasOwnProperty('company')) {
+    info['company'] = '-';
+  }
+
+  var mailOptions = {
+    from: 'Markev Couriers Info <	' + process.env.SENDER + '>',
+    to: process.env.RECEIVER,
+    subject: '[Markev Couriers] Client Contact Query',
+    html:
+      `
+        <table rules="all" style="border-color:#666" cellpadding="10">
+          <tbody>
+            <tr style="background-color:#166AB6;color:white;font-size:22px">
+              <td colspan="2">Client Contact Query</td>
+            </tr>
+            <tr>
+              <td><strong>Name: </strong></td>
+              <td>${info['name']}</td>
+            </tr>
+            <tr>
+              <td><strong>Email: </strong></td>
+              <td><a href="${'mailto:' + info['email']}" target="_blank"><span class="il">${info['email']}</span></a></td>
+            </tr>
+            <tr>
+              <td><strong>Phone: </strong></td>
+              <td>${info['phone']}</td>
+            </tr>
+            <tr>
+              <td><strong>Company: </strong></td>
+              <td>${info['company']}</td>
+            </tr>
+            <tr>
+              <td><strong>Message: </strong></td>
+              <td>${info['message']}</td>
+            </tr>
+            <tr></tr>
+          </tbody>
         </table>
       `
   };

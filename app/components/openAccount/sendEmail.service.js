@@ -6,15 +6,16 @@ angular
 
 function EmailService($http, $location) {
   var service = this;
+  var host = $location.$$host !== 'localhost' ? 'https://markev-couriers.herokuapp.com' : 'http://localhost:5000';
 
   service.sendEmail = sendEmail;
+  service.contactUs = contactUs;
 
   function sendEmail(info) {
-    var host = 'http://localhost:5000';
-
-    if($location.$$host !== 'localhost') {
-      host = 'https://markev-couriers.herokuapp.com';
-    }
     $http.post(host + '/email', {info: info});
+  }
+
+  function contactUs(info) {
+    $http.post(host + '/contact', {info:info});
   }
 }
