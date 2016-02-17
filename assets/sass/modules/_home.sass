@@ -1,31 +1,21 @@
 @import "../variables"
+@import "../util"
 
 .home
-  &__customers
+  .section
     padding: 20px 0
-    background: $primary
+
+    &--primary
+      @extend .section
+      background: $primary
 
     .header
       color: #fff
 
-  &__offer
-    padding: 20px 0
-    background: #F5FBFF
-
-    .header
+    .header--dark
       color: #000
 
-  &__why-us
-    padding: 20px 0
-    background-color: $primary
-
-    .header
-      color: #fff
-
   &__reasons
-    padding: 20px 0
-    background-color: $primary
-
     article
       .lnr, h4, p
         color: white
@@ -38,12 +28,59 @@
           color: $accent
       h4
         margin-top: 30px
-        font-size: 23px
-        font-weight: 300
+        font-size: 20px
+      p
+        font-size: 17px
 
-    @media (max-width: 991px)
-      article
-        margin-bottom: 40px
+      @media (max-width: 991px)
+        &
+          margin-bottom: 40px
+
+  &__testimonials
+    .testimonial
+      display: flex
+      flex-direction: row
+      margin-bottom: 30px
+
+    .face
+      border-radius: 50%
+      +size(150px)
+      border: 2px solid white
+      box-shadow: 0 0 5px 0 rgba(255, 255, 255, 1)
+
+    .body
+      margin-top: 5px
+      margin-left: 30px
+      color: white
+
+      .thoughts
+        font-style: italic
+        font-size: 20px
+
+        .quote
+          font-size: 30px
+          margin-right: 4px
+          line-height: 0.2
+
+      .profile
+        margin-top: 20px
+        font-size: 17px
+        color: lightcyan
+        font-weight: 600
+
+    @media(max-width: 768px)
+      &
+        padding: 0
+
+        .testimonial
+          flex-direction: column
+
+          .face
+            margin: 0 auto 20px
+
+          .body
+            margin: 0
+            text-align: center
 
   &__info
     font-size: 12px
