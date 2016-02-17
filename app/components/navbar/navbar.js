@@ -3,7 +3,7 @@
 angular
   .module('markevCouriers')
   .component('navbar', {
-    templateUrl: '/app/components/navbar/navbar.html',
+    templateUrl: 'dist/navbar.html',
     controller: function (smoothScroll, $state, $timeout) {
       this.scroll = scroll;
 

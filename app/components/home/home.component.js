@@ -3,5 +3,5 @@
 angular
   .module('markevCouriers')
   .component('home', {
-    templateUrl: 'app/components/home/home.html'
+    templateUrl: 'dist/home.html'
   });

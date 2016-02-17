@@ -3,7 +3,7 @@
 angular
   .module('markevCouriers')
   .component('open', {
-    templateUrl: 'app/components/openAccount/openAccount.html',
+    templateUrl: 'dist/openAccount.html',
     controller: function(EmailService) {
       this.info = {
         parish: 'Christ Church',
