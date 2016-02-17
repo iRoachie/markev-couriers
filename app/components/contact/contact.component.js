@@ -10,6 +10,6 @@ angular
       this.submit = function() {
         this.submitText = 'SENT';
         EmailService.contactUs(this.info);
-      }
+      };
     }
   });
