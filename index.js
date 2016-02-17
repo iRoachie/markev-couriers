@@ -125,7 +125,9 @@ app.post('/api/contact', function(req, res) {
             </tr>
             <tr>
               <td><strong>Email: </strong></td>
-              <td><a href="${'mailto:' + info['email']}" target="_blank"><span class="il">${info['email']}</span></a></td>
+              <td>
+                <a href="${'mailto:' + info['email']}" target="_blank"><span class="il">${info['email']}</span></a>
+              </td>
             </tr>
             <tr>
               <td><strong>Phone: </strong></td>

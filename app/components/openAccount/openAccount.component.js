@@ -34,6 +34,6 @@ angular
       this.submit = function() {
         this.submitText = 'SENT';
         EmailService.sendEmail(this.info);
-      }
+      };
     }
   });

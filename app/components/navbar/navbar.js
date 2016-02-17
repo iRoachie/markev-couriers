@@ -19,8 +19,8 @@ angular
           $state.go('home').then(function () {
             $timeout(function () {
               scroll(id);
-            }, 300)
-          })
+            }, 300);
+          });
         }
       }
     }

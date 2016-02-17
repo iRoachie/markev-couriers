@@ -2,15 +2,15 @@
 
 angular
   .module('markevCouriers')
-  .factory('Page', function() {
+  .factory('Page', function () {
     var title = 'Markev Couriers - It\'s Delivered';
 
     return {
-      setTitle: function(newTitle) {
+      setTitle: function (newTitle) {
         title = newTitle;
       },
-      title: function(){
+      title: function () {
         return title;
       }
-    }
+    };
   });

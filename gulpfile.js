@@ -41,7 +41,7 @@ gulp.task('vendor', function () {
   gulp.src(bowercss)
     .pipe(concatCss('vendor.css'))
     .pipe(cssnano())
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('sass', function () {
@@ -62,7 +62,7 @@ gulp.task('sass', function () {
 
 gulp.task('jade', function() {
   gulp.src(['app/components/**/*.jade'])
-    .pipe(rename(function(path){path.dirname=''}))
+    .pipe(rename(function(path){path.dirname='';}))
     .pipe(jade())
     .pipe(gulp.dest('dist/'));
 });
