@@ -95,7 +95,7 @@ gulp.task('clean', function() {
   return del('dist');
 });
 
-gulp.task('serve', ['build'], function () {
+gulp.task('serve', ['dev'], function () {
   browserSync.init({
     server: './',
     browser: 'google chrome canary'
@@ -109,5 +109,6 @@ gulp.task('serve', ['build'], function () {
 });
 
 gulp.task('build', ['vendor', 'sass', 'scripts', 'jade', 'images']);
+gulp.task('dev', ['sass', 'scripts', 'jade']);
 
 gulp.task('default', ['build']);
