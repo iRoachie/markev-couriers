@@ -13,7 +13,6 @@ var rename = require('gulp-rename');
 var util = require('gulp-util');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
-var del = require('del');
 
 var paths = ['**/**/*.sass'];
 
@@ -89,10 +88,6 @@ gulp.task('images', function() {
       use: [pngquant()]
     }))
     .pipe(gulp.dest('dist/images'));
-});
-
-gulp.task('clean', function() {
-  return del('dist');
 });
 
 gulp.task('serve', ['dev'], function () {
