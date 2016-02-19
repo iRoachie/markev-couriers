@@ -11,6 +11,9 @@ var browserSync = require('browser-sync').create();
 var jade = require('gulp-jade');
 var rename = require('gulp-rename');
 var util = require('gulp-util');
+var imagemin = require('gulp-imagemin');
+var pngquant = require('imagemin-pngquant');
+var del = require('del');
 
 var paths = ['**/**/*.sass'];
 
@@ -26,9 +29,9 @@ var bowerjs = [
 ];
 
 var bowercss = [
-  'assets/lib/icon-font.min.css',
   'assets/lib/bootstrap.min.css',
   'bower_components/slick-carousel/slick/slick.css',
+  'bower_components/Ionicons/css/ionicons.min.css',
   'bower_components/slick-carousel/slick/slick-theme.css',
   'bower_components/font-awesome/css/font-awesome.min.css'
 ];
@@ -78,11 +81,24 @@ gulp.task('scripts', function () {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('serve', ['build'], function () {
+gulp.task('images', function() {
+  gulp.src('assets/img/**/*')
+    .pipe(imagemin({
+      progressive: true,
+      svgoPlugins: [{removeViewBox: false}],
+      use: [pngquant()]
+    }))
+    .pipe(gulp.dest('dist/images'));
+});
+
+gulp.task('clean', function() {
+  return del('dist');
+});
+
+gulp.task('serve', ['dev'], function () {
   browserSync.init({
     server: './',
-    browser: 'google chrome canary',
-    notify: false
+    browser: 'google chrome canary'
   });
 
   gulp.watch(paths, ['sass']);
@@ -92,6 +108,7 @@ gulp.task('serve', ['build'], function () {
   gulp.watch('**/**.html').on('change', browserSync.reload);
 });
 
-gulp.task('build', ['vendor', 'sass', 'scripts', 'jade']);
+gulp.task('build', ['vendor', 'sass', 'scripts', 'jade', 'images']);
+gulp.task('dev', ['sass', 'scripts', 'jade']);
 
 gulp.task('default', ['build']);

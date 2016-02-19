@@ -1,6 +1,6 @@
 .container-fluid.contact-us
   .row
-    .brand-image(back-img="/assets/img/contact-us.jpg")
+    .brand-image(back-img="dist/images/contact-us.jpg")
       .overlay
         h2.text-center.header Contact Us
 
@@ -40,13 +40,9 @@
                 input#company.form-control(type="text", placeholder="Company", ng-model="$ctrl.info.company")
 
             .form-row
-              .form-group
-                p.open-account__form__header Questions, Queries, Concerns
-
-            .form-row
               .form-group(ng-class="{'has-error': contactForm.message.$error, 'has-success': contactForm.message.$valid}")
-                label.memo(for="message")
-                  textarea#message.form-control(name="message", ng-model="$ctrl.info.message", required)
+                label(for="message") Questions, Queries, Concerns
+                textarea#message.form-control(name="message", ng-model="$ctrl.info.message", required)
 
             .form-row
               .form-group

@@ -12,30 +12,77 @@
         h2.text-center.header Why Markev Couriers?
 
     .row.home__reasons.section--primary
-      article.col-md-3.col-sm-6.text-center
-        span.lnr.lnr-clock
-        h4 Speed
-        p Same Day Service
+      .container
+        .row
+          article.col-md-3.col-sm-6.text-center
+            span.ion-ios-stopwatch-outline
+            h4 Speed
+            p Same Day Service
 
-      article.col-md-3.col-sm-6.text-center
-        span.lnr.lnr-lock
-        h4 Secure
-        p Our Services are Strictly Confidential
+          article.col-md-3.col-sm-6.text-center
+            span.ion-ios-locked-outline
+            h4 Secure
+            p Our Services are Strictly Confidential
 
-      article.col-md-3.col-sm-6.text-center
-        span.lnr.lnr-cart
-        h4 Cost
-        p Rates as low as $7.00 *
+          article.col-md-3.col-sm-6.text-center
+            span.ion-ios-cart-outline
+            h4 Cost
+            p Rates as low as $7.00 *
 
-      article.col-md-3.col-sm-6.text-center
-        span.lnr.lnr-inbox
-        h4 Delivery
-        p Islandwide Service
+          article.col-md-3.col-sm-6.text-center
+            span.ion-ios-box-outline
+            h4 Delivery
+            p Islandwide Service
 
   #services
-    .row.section
+    .row.section--light
       .col-md-12
         h2.text-center.header--dark What We Offer
+
+    .row.home__services.section--light
+      .container
+        .row
+          .col-sm-6.col-md-4
+            article.offer
+              i.material-icons local_shipping
+              .body
+                p.title Pickups and Deliveries
+                p.desc We collect from home, office or any location and deliver to anywhere on this beautiful island.
+
+          .col-sm-6.col-md-4
+            article.offer
+              i.material-icons lightbulb_outline
+              .body
+                p.title Utility bill payments
+                p.desc Skip the line, whether it’s SurePay or any other utility company, your bills will be paid in by us.
+
+          .col-sm-6.col-md-4
+            article.offer
+              i.material-icons account_balance
+              .body
+                p.title N.I.S payments
+                p.desc Keep up to date with your contributions or have a sick form dropped off or paid up.
+
+          .col-sm-6.col-md-4
+            article.offer
+              i.material-icons payment
+              .body
+                p.title B.R.A payments
+                p.desc Driver’s license, P.A.Y.E, Corp tax, Land tax and this list goes on.
+
+          .col-sm-6.col-md-4
+            article.offer
+              i.material-icons local_hospital
+              .body
+                p.title Collection of medication
+                p.desc Give us a call, no return fees you just pay for collection.
+
+          .col-sm-6.col-md-4
+            article.offer
+              i.material-icons attach_money
+              .body
+                p.title Collection of Cheques
+                p.desc No need to wait in line to collect those cheques, we'll collect them and bring them to you.
 
   #customers
     .row.home__customers.section--primary
@@ -46,7 +93,8 @@
       .container
         .row
           .col-md-6.testimonial
-            img.face(src="assets/img/testimonials/face1.jpg")
+            .face
+              img(src="dist/images/testimonials/face1.jpg")
             .body
               p.thoughts
                 span.quote &ldquo;
@@ -54,7 +102,8 @@
               p.profile &mdash; Vivamus Hendrerit Arcu Sed Erat Molestie Vehicula. Sed Auctor Neque
 
           .col-md-6.testimonial
-            img.face(src="assets/img/testimonials/face2.jpg")
+            .face
+              img(src="dist/images/testimonials/face2.jpg")
             .body
               p.thoughts
                 span.quote &ldquo;
@@ -62,7 +111,8 @@
               p.profile &mdash; Vestibulum Ante Ipsum Primis In Faucibus Orci Luctus Et
         .row
           .col-md-6.testimonial
-            img.face(src="assets/img/testimonials/face3.jpg")
+            .face
+              img(src="dist/images/testimonials/face3.jpg")
             .body
               p.thoughts
                 span.quote &ldquo;
@@ -70,7 +120,8 @@
               p.profile &mdash; John Black, Minister of Black boom at Something place
 
           .col-md-6.testimonial
-            img.face(src="assets/img/testimonials/face4.jpg")
+            .face
+              img(src="dist/images/testimonials/face4.jpg")
             .body
               p.thoughts
                 span.quote &ldquo;
