@@ -6,6 +6,10 @@
 
   label
     margin-bottom: 7px
+    font-family: "Open Sans", sans-serif
+    font-weight: 600
+    font-size: 14px
+    color: rgba(0,0,0,0.87)
 
   &__form-section
     @extend .open-account__form-section
@@ -16,11 +20,15 @@
   &__form
     @extend .open-account__form
 
-    .memo
-      width: 100%
+    &__header
+      font-size: 14px
+      margin-top: 15px
+      font-weight: 600
+      margin-bottom: 0
+      font-family: "Open Sans", sans-serif
 
-      textarea
-        height: 100px
+    textarea
+      height: 100px
 
   @media (max-width: 1170px)
     &__form
