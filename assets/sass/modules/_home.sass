@@ -5,6 +5,10 @@
   .section
     padding: 20px 0
 
+    &--light
+      @extend .section
+      background: #F5FBFF
+
     &--primary
       @extend .section
       background: $primary
@@ -17,24 +21,64 @@
 
   &__reasons
     article
-      .lnr, h4, p
+      .lnr, h4, p, span
         color: white
 
-      .lnr
+      .lnr, span
         font-size: 7em
         transition: all ease-in-out .2s
 
         &:hover
           color: $accent
       h4
-        margin-top: 30px
         font-size: 20px
-      p
-        font-size: 17px
 
       @media (max-width: 991px)
         &
           margin-bottom: 40px
+
+  &__services
+    .offer
+      display: flex
+      flex-direction: row
+      background: #fff
+      padding: 20px
+      margin-bottom: 30px
+      box-shadow: 0 0 5px 0 $primary
+      height: 167px
+
+      &:hover
+        animation: wiggle .6s 2
+
+      .material-icons
+        font-size: 30px
+        color: $accent
+
+      .body
+        margin-left: 20px
+
+        .title
+          font-weight: 600
+          text-transform: capitalize
+          color: black
+          font-size: 20px
+          margin-bottom: 20px
+
+        .desc
+          color: black
+
+      @media (max-width: 1200px)
+        &
+          height: 200px
+
+      @media (max-width: 998px)
+        &
+          height: 150px
+
+      @media (max-width: 768px)
+        &
+          height: auto
+
 
   &__testimonials
     .testimonial
@@ -44,7 +88,7 @@
 
     .face
       border-radius: 50%
-      +size(150px!important)
+      +size(150px)
       border: 2px solid white
       box-shadow: 0 0 5px 0 rgba(255, 255, 255, 1)
 
