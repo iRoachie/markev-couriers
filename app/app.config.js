@@ -6,14 +6,14 @@ angular
     $stateProvider
       .state('home', {
         url: '/',
-        template: '<home></home>',
+        templateUrl: 'dist/home.html',
         onEnter: function(Page) {
           Page.setTitle('Markev Couriers - It\'s Delivered');
         }
       })
       .state('about', {
         url: '/about',
-        template: '<about></about>',
+        templateUrl: 'dist/about.html',
         onEnter: function(Page) {
           Page.setTitle('About - Markev Couriers');
         }
