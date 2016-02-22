@@ -64,7 +64,7 @@ gulp.task('sass', function () {
 });
 
 gulp.task('jade', function() {
-  gulp.src(['app/components/**/*.jade'])
+  gulp.src(['app/**/*.jade'])
     .pipe(rename(function(path){path.dirname='';}))
     .pipe(jade().on('error', util.log))
     .pipe(gulp.dest('dist/'));
