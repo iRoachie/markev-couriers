@@ -92,8 +92,7 @@ gulp.task('images', function() {
 
 gulp.task('serve', ['dev'], function () {
   browserSync.init({
-    server: './',
-    browser: 'google chrome canary'
+    server: './'
   });
 
   gulp.watch(paths, ['sass']);
