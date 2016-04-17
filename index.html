@@ -1,51 +1,53 @@
 <!doctype html>
 <html ng-app="markevCouriers" ng-controller="MainController as main">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:title" content="Markev Couriers - It's Delivered">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="http://markev-couriers.herokuapp.com/">
-  <meta property="og:description" content="Markev Couriers are here to help you and were just in time. With our comprehensive networked team island wide coverage and speed are at its best.
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Markev Couriers - It's Delivered">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://markev-couriers.herokuapp.com/">
+    <meta property="og:description" content="Markev Couriers are here to help you and were just in time. With our comprehensive networked team island wide coverage and speed are at its best.
 ">
-  <meta property="og:image" content="http://markev-couriers.herokuapp.com/favicons/graph.png">
+    <meta name="description" content="Markev Couriers are here to help you and were just in time. With our comprehensive networked team island wide coverage and speed are at its best.
+">
+    <meta property="og:image" content="http://markev-couriers.herokuapp.com/favicons/graph.png">
 
-  <title ng-bind="main.Page.title()"></title>
+    <title ng-bind="main.Page.title()"></title>
 
-  <link rel="stylesheet" href="dist/vendor.css">
-  <link rel="stylesheet" href="dist/index.css">
+    <link rel="stylesheet" href="dist/vendor.css">
+    <link rel="stylesheet" href="dist/index.css">
 
-  <link rel="icon" href="favicons/favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="favicons/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="favicons/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="favicons/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="favicons/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="favicons/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="favicons/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="favicons/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
-  <link rel="shortcut icon" type="image/png" href="favicons/safari.png">
-  <link rel="manifest" href="favicons/manifest.json">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="favicons/ms-icon-144x144.png">
-  <meta name="theme-color" content="#ffffff">
-</head>
+    <link rel="icon" href="favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    <link rel="shortcut icon" type="image/png" href="favicons/safari.png">
+    <link rel="manifest" href="favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+  </head>
 
-<body>
-  <navbar></navbar>
+  <body>
+    <navbar></navbar>
 
-  <main ui-view autoscroll="true"></main>
+    <main ui-view autoscroll="true"></main>
 
-  <div ng-include="'dist/footer.html'"></div>
+    <div ng-include="'dist/footer.html'"></div>
 
-  <script src="dist/vendor.js"></script>
-  <script src="dist/app.js"></script>
+    <script src="dist/vendor.js"></script>
+    <script src="dist/app.js"></script>
 
-</body>
+  </body>
 </html>
