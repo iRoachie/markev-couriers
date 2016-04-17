@@ -97,7 +97,7 @@ gulp.task('serve', ['dev'], function () {
 
   gulp.watch(paths, ['sass']);
   gulp.watch('app/**/*.js', ['scripts']);
-  gulp.watch('app/components/**/*.jade', ['jade']);
+  gulp.watch('app/**/*.jade', ['jade']);
   gulp.watch('dist/*js').on('change', browserSync.reload);
   gulp.watch('**/**.html').on('change', browserSync.reload);
 });
