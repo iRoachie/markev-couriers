@@ -11,12 +11,15 @@ nav.navbar.navbar-default.navbar-fixed-top
         img.logo(src="dist/images/logo.png")
 
     .collapse.navbar-collapse
-      ul.nav.navbar-nav.navbar-left
+      ul.nav.navbar-nav.navbar-left.left-menu
         li: a.navbar__link(ng-click="$ctrl.scroll('why')", data-toggle="collapse", data-target=".navbar-collapse.in") Why Us
         li: a.navbar__link(ng-click="$ctrl.scroll('services')", data-toggle="collapse", data-target=".navbar-collapse.in") Services
         li: a.navbar__link(ng-click="$ctrl.scroll('customers')", data-toggle="collapse", data-target=".navbar-collapse.in") Our Customers
+        
+      ul.nav.navbar-nav.barbados-logo
+        img(src="dist/images/barbados50.png")
 
-      ul.nav.navbar-nav.navbar-right
+      ul.nav.navbar-nav.navbar-right.right-menu
         li: a.navbar__link(ui-sref="about", data-toggle="collapse", data-target=".navbar-collapse.in") About Us
         li: a.navbar__link(ui-sref="contact", data-toggle="collapse", data-target=".navbar-collapse.in") Contact Us
         li: a.navbar__link.open(ui-sref="open-account", data-toggle="collapse", data-target=".navbar-collapse.in") Open an Account
