@@ -3,7 +3,7 @@
 angular
   .module('markevCouriers')
   .component('contact', {
-    templateUrl: '/dist/contact.html',
+    templateUrl: 'serve/contact.html',
     controller: function(EmailService) {
       this.info = {};
 

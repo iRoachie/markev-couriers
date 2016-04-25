@@ -13,6 +13,7 @@ var rename = require('gulp-rename');
 var util = require('gulp-util');
 
 var paths = ['**/**/*.sass'];
+var path = util.env.production ? 'dist/' : './';
 
 var bowerjs = [
   'bower_components/jquery/dist/jquery.min.js',
@@ -27,22 +28,20 @@ var bowerjs = [
 
 var bowercss = [
   'assets/lib/bootstrap.min.css',
-  'bower_components/slick-carousel/slick/slick.css',
-  'bower_components/Ionicons/css/ionicons.min.css',
-  'bower_components/slick-carousel/slick/slick-theme.css',
-  'bower_components/font-awesome/css/font-awesome.min.css'
+ 'bower_components/slick-carousel/slick/slick.css',
+ 'bower_components/slick-carousel/slick/slick-theme.css',
 ];
 
 gulp.task('vendor', function () {
   gulp.src(bowerjs)
     .pipe(concat('vendor.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest(path + 'serve'));
 
   gulp.src(bowercss)
     .pipe(concatCss('vendor.css'))
     .pipe(cssnano())
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest(path + 'serve'));
 });
 
 gulp.task('sass', function () {
@@ -57,7 +56,7 @@ gulp.task('sass', function () {
       .pipe(sass(sassOptions).on('error', sass.logError))
       .pipe(autoprefixer())
     .pipe(maps.write('.'))
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest(path + 'serve'))
     .pipe(browserSync.stream());
 });
 
@@ -65,7 +64,7 @@ gulp.task('jade', function() {
   gulp.src(['app/**/*.jade'])
     .pipe(rename(function(path){path.dirname='';}))
     .pipe(jade().on('error', util.log))
-    .pipe(gulp.dest('dist/'));
+    .pipe(gulp.dest(path + 'serve'));
 });
 
 gulp.task('scripts', function () {
@@ -75,10 +74,10 @@ gulp.task('scripts', function () {
       .pipe(ngAnnotate())
       .pipe(uglify())
     .pipe(maps.write('.'))
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest(path + 'serve'));
 });
 
-gulp.task('serve', ['vendor', 'sass', 'scripts', 'jade'], function () {
+gulp.task('serve', ['build'], function () {
   browserSync.init({
     server: './'
   });
@@ -86,8 +85,19 @@ gulp.task('serve', ['vendor', 'sass', 'scripts', 'jade'], function () {
   gulp.watch(paths, ['sass']);
   gulp.watch('app/**/*.js', ['scripts']);
   gulp.watch('app/**/*.jade', ['jade']);
-  gulp.watch('dist/*js').on('change', browserSync.reload);
+  gulp.watch(path + '/*js').on('change', browserSync.reload);
   gulp.watch('**/**.html').on('change', browserSync.reload);
+});
+
+gulp.task('serve:dist', ['build'], function () {
+  browserSync.init({
+    server: './dist/'
+  });
+});
+
+gulp.task('dist', ['build'], function() {
+  gulp.src(['index.html', './favicons/**', './assets/**'], {base: './'})
+  .pipe(gulp.dest(path));
 });
 
 gulp.task('build', ['vendor', 'sass', 'scripts', 'jade']);

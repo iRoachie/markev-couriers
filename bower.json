@@ -16,10 +16,8 @@
     "angular-ui-router": "~0.2.15",
     "bootstrap": "~3.3.5",
     "slick-carousel": "~1.5.8",
-    "font-awesome": "^4.5.0",
     "ngSmoothScroll": "^2.0.0",
     "angular-messages": "^1.5.0",
-    "Ionicons": "ionicons#^2.0.1"
   },
   "resolutions": {
     "slick-carousel": "~1.5.8",

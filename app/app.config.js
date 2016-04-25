@@ -6,14 +6,14 @@ angular
     $stateProvider
       .state('home', {
         url: '/',
-        templateUrl: 'dist/home.html',
+        templateUrl: 'serve/home.html',
         onEnter: function(Page) {
           Page.setTitle('Markev Couriers - It\'s Delivered');
         }
       })
       .state('about', {
         url: '/about',
-        templateUrl: 'dist/about.html',
+        templateUrl: 'serve/about.html',
         onEnter: function(Page) {
           Page.setTitle('About - Markev Couriers');
         }
@@ -34,10 +34,10 @@ angular
       });
 
     $urlRouterProvider.otherwise('/');
-    // $locationProvider.html5Mode({
-    //   enabled: true,
-    //   requireBase: false
-    // });
+    $locationProvider.html5Mode({
+      enabled: true,
+      requireBase: false
+    });
 
     $uiViewScrollProvider.useAnchorScroll();
   });

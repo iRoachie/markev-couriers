@@ -16,8 +16,12 @@
 
     <title ng-bind="main.Page.title()"></title>
 
-    <link rel="stylesheet" href="dist/vendor.css">
-    <link rel="stylesheet" href="dist/index.css">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+
+    <link rel="stylesheet" href="serve/vendor.css">
+    <link rel="stylesheet" href="serve/index.css">
 
     <link rel="icon" href="favicons/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-icon-57x57.png">
@@ -45,10 +49,10 @@
 
     <main ui-view autoscroll="true"></main>
 
-    <div ng-include="'dist/footer.html'"></div>
+    <div ng-include="'serve/footer.html'"></div>
 
-    <script src="dist/vendor.js"></script>
-    <script src="dist/app.js"></script>
+    <script src="serve/vendor.js"></script>
+    <script src="serve/app.js"></script>
 
   </body>
 </html>
