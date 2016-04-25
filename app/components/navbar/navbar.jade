@@ -8,7 +8,7 @@ nav.navbar.navbar-default.navbar-fixed-top
         span.icon-bar
 
       a.navbar-brand(ng-click="$ctrl.scroll('top')", data-toggle="collapse", data-target=".navbar-collapse.in")
-        img.logo(src="/assets/img/logo.png")
+        img.logo(src="assets/img/logo.png")
 
     .collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-left.left-menu
@@ -17,9 +17,9 @@ nav.navbar.navbar-default.navbar-fixed-top
         li: a.navbar__link(ng-click="$ctrl.scroll('customers')", data-toggle="collapse", data-target=".navbar-collapse.in") Our Customers
         
       ul.nav.navbar-nav.barbados-logo
-        img(src="/assets/img/barbados50.png")
+        img(src="assets/img/barbados50.png")
 
       ul.nav.navbar-nav.navbar-right.right-menu
         li: a.navbar__link(ui-sref="about", data-toggle="collapse", data-target=".navbar-collapse.in") About Us
-        li: a.navbar__link(ui-sref="contact", data-toggle="collapse", data-target=".navbar-collapse.in") Contact Us
-        li: a.navbar__link.open(ui-sref="open-account", data-toggle="collapse", data-target=".navbar-collapse.in") Open an Account
+        li: a.navbar__link.open(ui-sref="contact", data-toggle="collapse", data-target=".navbar-collapse.in") Contact Us
+        //- li: a.navbar__link.open(ui-sref="open-account", data-toggle="collapse", data-target=".navbar-collapse.in") Open an Account

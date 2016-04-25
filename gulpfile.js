@@ -78,7 +78,7 @@ gulp.task('scripts', function () {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('serve', ['dev'], function () {
+gulp.task('serve', ['vendor', 'sass', 'scripts', 'jade'], function () {
   browserSync.init({
     server: './'
   });
@@ -91,6 +91,5 @@ gulp.task('serve', ['dev'], function () {
 });
 
 gulp.task('build', ['vendor', 'sass', 'scripts', 'jade']);
-gulp.task('dev', ['sass', 'scripts', 'jade']);
 
 gulp.task('default', ['build']);
