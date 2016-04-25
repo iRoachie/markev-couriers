@@ -11,8 +11,6 @@ var browserSync = require('browser-sync').create();
 var jade = require('gulp-jade');
 var rename = require('gulp-rename');
 var util = require('gulp-util');
-var imagemin = require('gulp-imagemin');
-var pngquant = require('imagemin-pngquant');
 
 var paths = ['**/**/*.sass'];
 
@@ -80,16 +78,6 @@ gulp.task('scripts', function () {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('images', function() {
-  gulp.src('assets/img/**/*')
-    .pipe(imagemin({
-      progressive: true,
-      svgoPlugins: [{removeViewBox: false}],
-      use: [pngquant()]
-    }))
-    .pipe(gulp.dest('dist/images'));
-});
-
 gulp.task('serve', ['dev'], function () {
   browserSync.init({
     server: './'
@@ -102,7 +90,7 @@ gulp.task('serve', ['dev'], function () {
   gulp.watch('**/**.html').on('change', browserSync.reload);
 });
 
-gulp.task('build', ['vendor', 'sass', 'scripts', 'jade', 'images']);
+gulp.task('build', ['vendor', 'sass', 'scripts', 'jade']);
 gulp.task('dev', ['sass', 'scripts', 'jade']);
 
 gulp.task('default', ['build']);
