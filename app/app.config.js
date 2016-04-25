@@ -6,25 +6,25 @@ angular
     $stateProvider
       .state('home', {
         url: '/',
-        templateUrl: 'dist/home.html',
+        templateUrl: 'serve/home.html',
         onEnter: function(Page) {
           Page.setTitle('Markev Couriers - It\'s Delivered');
         }
       })
       .state('about', {
         url: '/about',
-        templateUrl: 'dist/about.html',
+        templateUrl: 'serve/about.html',
         onEnter: function(Page) {
           Page.setTitle('About - Markev Couriers');
         }
       })
-      .state('open-account', {
-        url: '/open-an-account',
-        template: '<open></open>',
-        onEnter: function(Page) {
-          Page.setTitle('Open an Account - Markev Couriers');
-        }
-      })
+      // .state('open-account', {
+      //   url: '/open-an-account',
+      //   template: '<open></open>',
+      //   onEnter: function(Page) {
+      //     Page.setTitle('Open an Account - Markev Couriers');
+      //   }
+      // })
       .state('contact', {
         url: '/contact-us',
         template: '<contact></contact>',
