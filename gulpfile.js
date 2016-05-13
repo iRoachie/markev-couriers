@@ -32,7 +32,7 @@ var bowerjs = [
 var bowercss = [
   'assets/lib/bootstrap.min.css',
   'bower_components/Ionicons/css/ionicons.min.css',
-  'bower_components/font-awesome/css/bower_components/Ionicons/css/ionicons.min.css',
+  'bower_components/font-awesome/css/font-awesome.min.css',
   'bower_components/slick-carousel/slick/slick.css',
   'bower_components/slick-carousel/slick/slick-theme.css'
 ];
