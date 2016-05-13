@@ -11,6 +11,9 @@ var browserSync = require('browser-sync').create();
 var jade = require('gulp-jade');
 var rename = require('gulp-rename');
 var util = require('gulp-util');
+var gzip = require('gulp-gzip');
+var del = require('del');
+var middleware = require('connect-gzip-static')('./');
 
 var paths = ['**/**/*.sass'];
 var path = util.env.production ? 'dist/' : './';
@@ -28,23 +31,37 @@ var bowerjs = [
 
 var bowercss = [
   'assets/lib/bootstrap.min.css',
- 'bower_components/slick-carousel/slick/slick.css',
- 'bower_components/slick-carousel/slick/slick-theme.css',
+  'bower_components/Ionicons/css/ionicons.min.css',
+  'bower_components/font-awesome/css/bower_components/Ionicons/css/ionicons.min.css',
+  'bower_components/slick-carousel/slick/slick.css',
+  'bower_components/slick-carousel/slick/slick-theme.css'
 ];
 
-gulp.task('vendor', function () {
+gulp.task('compress', ['clean'], function () {
+  return gulp.src(['index.html', 'assets/fonts/*', 'assets/img/*', 'favicons/*'], {base: './'})
+    .pipe(gzip())
+    .pipe(gulp.dest('.'));
+});
+
+gulp.task('clean', function () {
+  return del(['**/*.gz', 'dist', 'serve']);
+});
+
+gulp.task('vendor', ['clean'], function () {
   gulp.src(bowerjs)
     .pipe(concat('vendor.js'))
     .pipe(uglify())
+    .pipe(gzip())
     .pipe(gulp.dest(path + 'serve'));
 
   gulp.src(bowercss)
     .pipe(concatCss('vendor.css'))
     .pipe(cssnano())
+    .pipe(gzip())
     .pipe(gulp.dest(path + 'serve'));
 });
 
-gulp.task('sass', function () {
+gulp.task('sass', ['clean'], function () {
   var sassOptions = {
     errLogToConsole: true,
     outputStyle: 'compressed',
@@ -53,40 +70,51 @@ gulp.task('sass', function () {
 
   return gulp.src('assets/sass/index.sass')
     .pipe(maps.init())
-      .pipe(sass(sassOptions).on('error', sass.logError))
-      .pipe(autoprefixer())
+    .pipe(sass(sassOptions).on('error', sass.logError))
+    .pipe(autoprefixer())
     .pipe(maps.write('.'))
+    .pipe(gzip())
     .pipe(gulp.dest(path + 'serve'))
     .pipe(browserSync.stream());
 });
 
-gulp.task('jade', function() {
+gulp.task('jade', ['clean'], function () {
   gulp.src(['app/**/*.jade'])
-    .pipe(rename(function(path){path.dirname='';}))
+    .pipe(rename(function (path) {
+      path.dirname = '';
+    }))
     .pipe(jade().on('error', util.log))
+    .pipe(gzip())
     .pipe(gulp.dest(path + 'serve'));
 });
 
-gulp.task('scripts', function () {
+gulp.task('scripts', ['clean'], function () {
   gulp.src(['app/app.module.js', 'app/**/*.js'])
     .pipe(maps.init())
-      .pipe(concat('app.js'))
-      .pipe(ngAnnotate())
-      .pipe(uglify())
+    .pipe(concat('app.js'))
+    .pipe(ngAnnotate())
+    .pipe(uglify())
     .pipe(maps.write('.'))
+    .pipe(gzip())
     .pipe(gulp.dest(path + 'serve'));
 });
 
 gulp.task('serve', ['build'], function () {
   browserSync.init({
-    server: './'
+    server: './',
+    files: [path + 'serve/*', 'favicons/*', 'assets/*']
+  }, function (err, bs) {
+    bs.addMiddleware('*', middleware, {
+      override: true
+    });
   });
 
   gulp.watch(paths, ['sass']);
   gulp.watch('app/**/*.js', ['scripts']);
   gulp.watch('app/**/*.jade', ['jade']);
+  gulp.watch('index.html', ['compress']);
   gulp.watch(path + '/*js').on('change', browserSync.reload);
-  gulp.watch('**/**.html').on('change', browserSync.reload);
+  gulp.watch('index.html.gz').on('change', browserSync.reload);
 });
 
 gulp.task('serve:dist', ['build'], function () {
@@ -95,11 +123,13 @@ gulp.task('serve:dist', ['build'], function () {
   });
 });
 
-gulp.task('dist', ['build'], function() {
+gulp.task('dist', ['build'], function () {
   gulp.src(['index.html', './favicons/**', './assets/**'], {base: './'})
-  .pipe(gulp.dest(path));
+    .pipe(gulp.dest(path));
 });
 
-gulp.task('build', ['vendor', 'sass', 'scripts', 'jade']);
+gulp.task('build', ['compress', 'vendor', 'sass', 'scripts', 'jade'], function (cb) {
+  cb();
+});
 
 gulp.task('default', ['build']);

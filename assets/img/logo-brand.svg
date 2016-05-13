@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="923px" height="923px" viewBox="0 0 923 923" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background: #FFFFFF;">
+    <!-- Generator: Sketch 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+    <title>Logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="74.4201321%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#EEF159" offset="0%"></stop>
+            <stop stop-color="#CFCF40" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="27.925507%" y1="63.1315512%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#4598D7" stop-opacity="0.952105978" offset="0%"></stop>
+            <stop stop-color="#4B99D8" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="17.4664808%" y1="12.0056649%" x2="78.6507417%" y2="91.6559507%" id="linearGradient-3">
+            <stop stop-color="#66A2D0" offset="0%"></stop>
+            <stop stop-color="#176AB6" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#F3EE85" offset="0%"></stop>
+            <stop stop-color="#E8EB54" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-6.52999802%" y1="50%" x2="100%" y2="50%" id="linearGradient-5">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.38" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-6">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.2" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group">
+            <g transform="translate(2.000000, 71.000000)">
+                <g id="logo">
+                    <path d="M602.102512,213.892442 C750.182682,252.956057 849,323.340949 849,403.678355 C849,526.463209 618.172761,626 333.432932,626 C206.288849,626 89.8942113,606.153702 -5.82645043e-13,573.253208 C78.2403338,593.893044 170.233341,605.788941 268.669581,605.788941 C553.40941,605.788941 784.236649,506.25215 784.236649,383.467296 C784.236649,315.509221 713.526851,254.672774 602.102512,213.892442 Z" id="Oval-2-Copy-2" fill="url(#linearGradient-1)" transform="translate(424.500000, 419.946221) scale(-1, 1) translate(-424.500000, -419.946221) "></path>
+                    <path d="M672.102512,213.892442 C820.182682,252.956057 919,323.340949 919,403.678355 C919,526.463209 688.172761,626 403.432932,626 C276.288849,626 159.894211,606.153702 70,573.253208 C148.240334,593.893044 240.233341,605.788941 338.669581,605.788941 C623.40941,605.788941 854.236649,506.25215 854.236649,383.467296 C854.236649,315.509221 783.526851,254.672774 672.102512,213.892442 Z" id="Oval-2" fill="url(#linearGradient-2)"></path>
+                    <circle id="Oval-1" fill="url(#linearGradient-3)" cx="455.5" cy="272.5" r="272.5"></circle>
+                    <rect id="Rectangle-1" fill="url(#linearGradient-4)" transform="translate(455.500000, 273.000000) rotate(-15.000000) translate(-455.500000, -273.000000) " x="234" y="118" width="443" height="310"></rect>
+                    <g id="email19" transform="translate(460.198916, 275.162039) rotate(-15.000000) translate(-460.198916, -275.162039) translate(235.198916, 138.812299)" fill="#FFFFFF">
+                        <path d="M6.87622002e-14,3.45911799e-14 L6.87622002e-14,272.69948 L450,272.69948 L450,3.45911799e-14 L6.87622002e-14,3.45911799e-14 L6.87622002e-14,3.45911799e-14 Z M225.002318,168.403241 L40.4304806,20.2276784 L409.569519,20.2276784 L225.002318,168.403241 L225.002318,168.403241 Z M151.477099,136.301855 L22.1258892,240.147216 L22.1258892,32.4556478 L151.477099,136.301855 L151.477099,136.301855 Z M168.242788,149.763809 L224.996755,195.327996 L281.750723,149.763809 L409.685401,252.471802 L40.3145994,252.471802 L168.242788,149.763809 L168.242788,149.763809 Z M298.517339,136.306941 L427.873184,32.4556478 L427.873184,240.147216 L298.517339,136.306941 L298.517339,136.306941 Z" id="Shape"></path>
+                    </g>
+                </g>
+                <g id="MARKEV" transform="translate(30.000000, 560.000000)">
+                    <text font-family="AvenirNextCondensed-DemiBold, Avenir Next Condensed" font-size="144" font-style="condensed" font-weight="500" fill="#EBEE6A">
+                        <tspan x="0" y="144">MARKEV</tspan>
+                    </text>
+                    <path d="M242,66 L340.88826,74.3977737 L340.88826,42 C340.88826,42 386.360123,42 386.360123,42 L386.360123,57.194396 C386.360123,57.194396 357.5,57.194396 357.5,57.194396 C357.5,57.194396 357.070688,66 357.5,66 C357.070694,66 385.391514,66 399.551926,66 C399.551926,66 394.021545,42 393.5,42 C394.021545,42 413.040283,42 413.040283,42 C413.040283,42 417.995575,65.9999998 417.995575,66 C417.995575,66.0000002 429.832284,109.481781 430.665649,108.080063 C436.177902,98.8084679 447.355698,42 447.355698,42 C447.355698,42 465.869904,42 465.869904,42 C465.869904,42 454.585358,85.3117924 453.009964,94.8028927 C451.43457,104.293993 452,153 452,153 L242,153 L242,66 Z" id="Rectangle-2" fill="url(#linearGradient-5)"></path>
+                </g>
+                <text id="IT’S-DELIVERED" font-family="AvenirNextCondensed-Medium, Avenir Next Condensed" font-size="64" font-style="condensed" font-weight="400" fill="#186BB7">
+                    <tspan x="35" y="758">IT’S DELIVERED</tspan>
+                </text>
+                <g id="COURIERS" transform="translate(478.000000, 600.000000)">
+                    <text font-family="AvenirNextCondensed-Medium, Avenir Next Condensed" font-size="104" font-style="condensed" font-weight="400" fill="#4B99D8">
+                        <tspan x="0" y="104">COURIERS</tspan>
+                    </text>
+                    <path d="M4.39282793,65.6711502 C4.39282793,45.3776474 17,28 17,28 L386,28 L386,117 L17,117 C17,117 4.39282793,85.964653 4.39282793,65.6711502 Z" id="Rectangle-3" fill="url(#linearGradient-6)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

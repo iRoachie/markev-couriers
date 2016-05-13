@@ -17,7 +17,9 @@
     "bootstrap": "~3.3.5",
     "slick-carousel": "~1.5.8",
     "ngSmoothScroll": "^2.0.0",
-    "angular-messages": "^1.5.0"
+    "angular-messages": "^1.5.0",
+    "Ionicons": "ionicons#^2.0.1",
+    "font-awesome": "^4.6.3"
   },
   "resolutions": {
     "slick-carousel": "~1.5.8",
