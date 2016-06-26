@@ -1,17 +1,21 @@
-const gulp = require('gulp');
-const sass = require('gulp-sass');
-const concat = require('gulp-concat');
-const concatCss = require('gulp-concat-css');
-const uglify = require('gulp-uglify');
-const cssnano = require('gulp-cssnano');
-const maps = require('gulp-sourcemaps');
-const ngAnnotate = require('gulp-ng-annotate');
-const autoprefixer = require('gulp-autoprefixer');
-const browserSync = require('browser-sync').create();
-const pug = require('gulp-pug');
-const rename = require('gulp-rename');const util = require('gulp-util');
+'use strict';
 
-const paths = ['**/**/*.sass'];
+import gulp from 'gulp';
+import sass from'gulp-sass';
+import concat from'gulp-concat';
+import concatCss from'gulp-concat-css';
+import uglify from'gulp-uglify';
+import cssnano from'gulp-cssnano';
+import maps from'gulp-sourcemaps';
+import ngAnnotate from'gulp-ng-annotate';
+import autoprefixer from'gulp-autoprefixer';
+import browserSync from'browser-sync';
+import pug from'gulp-pug';
+import rename from'gulp-rename';
+import util from 'gulp-util';
+
+browserSync.create();
+
 const path = util.env.production ? 'dist/' : './';
 
 const bowerjs = [
@@ -34,19 +38,19 @@ const bowercss = [
 ];
 
 
-gulp.task('vendor', function () {
+gulp.task('vendor', () => {
   gulp.src(bowerjs)
     .pipe(concat('vendor.js'))
     .pipe(uglify())
-    .pipe(gulp.dest(path + 'serve'));
+    .pipe(gulp.dest(`${path}serve`));
 
   gulp.src(bowercss)
     .pipe(concatCss('vendor.css'))
     .pipe(cssnano())
-    .pipe(gulp.dest(path + 'serve'));
+    .pipe(gulp.dest(`${path}serve`));
 });
 
-gulp.task('sass', function () {
+gulp.task('sass', () => {
   let sassOptions = {
     errLogToConsole: true,
     outputStyle: 'compressed',
@@ -58,20 +62,18 @@ gulp.task('sass', function () {
     .pipe(sass(sassOptions).on('error', sass.logError))
     .pipe(autoprefixer())
     .pipe(maps.write('.'))
-    .pipe(gulp.dest(path + 'serve'))
+    .pipe(gulp.dest(`${path}serve`))
     .pipe(browserSync.stream());
 });
 
-gulp.task('pug', function () {
+gulp.task('pug', () =>{
   gulp.src(['app/**/*.jade'])
-    .pipe(rename(function (path) {
-      path.dirname = '';
-    }))
+    .pipe(rename(path => path.dirname = ''))
     .pipe(pug().on('error', util.log))
-    .pipe(gulp.dest(path + 'serve'));
+    .pipe(gulp.dest(`${path}serve`));
 });
 
-gulp.task('scripts', function () {
+gulp.task('scripts', () => {
   gulp.src(['app/app.module.js', 'app/**/*.js'])
     .pipe(maps.init())
     .pipe(concat('app.js'))
@@ -81,25 +83,25 @@ gulp.task('scripts', function () {
     .pipe(gulp.dest(path + 'serve'));
 });
 
-gulp.task('serve', ['build'], function () {
+gulp.task('serve', ['build'], () => {
   browserSync.init({
     server: './'
   });
 
-  gulp.watch(paths, ['sass']);
+  gulp.watch('**/**/*.sass', ['sass']);
   gulp.watch('app/**/*.js', ['scripts']);
   gulp.watch('app/**/*.jade', ['pug']);
-  gulp.watch(path + '/*js').on('change', browserSync.reload);
+  gulp.watch(`${path}/*js`).on('change', browserSync.reload);
   gulp.watch('**/**.html').on('change', browserSync.reload);
 });
 
-gulp.task('serve:dist', ['build'], function () {
+gulp.task('serve:dist', ['build'], () => {
   browserSync.init({
     server: './dist/'
   });
 });
 
-gulp.task('dist', ['build'], function () {
+gulp.task('dist', ['build'], () => {
   gulp.src(['index.html', './favicons/**', './assets/**'], {base: './'})
     .pipe(gulp.dest(path));
 });
