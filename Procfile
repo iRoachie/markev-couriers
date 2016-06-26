@@ -1,1 +1,1 @@
-web: babel-node index.babel.js
+web: ./node_modules/.bin/babel-node index.babel.js
