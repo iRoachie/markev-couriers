@@ -1,11 +1,11 @@
 require('dotenv').config({silent: true});
 
-const express = require('express');
+import express from 'express';
 const app = express();
-const path = require('path');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const nodemailer = require('nodemailer');
+
+import bodyParser from 'body-parser';
+import cors from 'cors';
+import nodemailer from 'nodemailer';
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -17,7 +17,7 @@ app.use('/assets', express.static(__dirname + '/assets'));
 app.use('/favicons', express.static(__dirname + '/favicons'));
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
 
-app.get('*', function(req, res) {
+app.get('*', (req, res) => {
     res.sendFile('index.html', {root: __dirname});
 });
 
@@ -31,7 +31,7 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-app.post('/api/contact', function(req, res) {
+app.post('/api/contact', (req, res) => {
   let info = req.body;
 
   if(!info.hasOwnProperty('company')) {
@@ -77,7 +77,7 @@ app.post('/api/contact', function(req, res) {
       `
   };
 
-  transporter.sendMail(mailOptions, function(error){
+  transporter.sendMail(mailOptions, error => {
     if(error)
       return console.log(error);
 
@@ -86,6 +86,6 @@ app.post('/api/contact', function(req, res) {
   });
 });
 
-app.listen(app.get('port'), function() {
+app.listen(app.get('port'), () => {
   console.log('Node app is running on port', app.get('port'));
 });

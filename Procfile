@@ -1,1 +1,1 @@
-web: node --use-strict index.js
+web: babel-node index.babel.js
