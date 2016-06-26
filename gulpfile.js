@@ -1,24 +1,20 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var concat = require('gulp-concat');
-var concatCss = require('gulp-concat-css');
-var uglify = require('gulp-uglify');
-var cssnano = require('gulp-cssnano');
-var maps = require('gulp-sourcemaps');
-var ngAnnotate = require('gulp-ng-annotate');
-var autoprefixer = require('gulp-autoprefixer');
-var browserSync = require('browser-sync').create();
-var jade = require('gulp-jade');
-var rename = require('gulp-rename');
-var util = require('gulp-util');
-var gzip = require('gulp-gzip');
-var del = require('del');
-var middleware = require('connect-gzip-static')('./');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const concat = require('gulp-concat');
+const concatCss = require('gulp-concat-css');
+const uglify = require('gulp-uglify');
+const cssnano = require('gulp-cssnano');
+const maps = require('gulp-sourcemaps');
+const ngAnnotate = require('gulp-ng-annotate');
+const autoprefixer = require('gulp-autoprefixer');
+const browserSync = require('browser-sync').create();
+const pug = require('gulp-pug');
+const rename = require('gulp-rename');const util = require('gulp-util');
 
-var paths = ['**/**/*.sass'];
-var path = util.env.production ? 'dist/' : './';
+const paths = ['**/**/*.sass'];
+const path = util.env.production ? 'dist/' : './';
 
-var bowerjs = [
+const bowerjs = [
   'bower_components/jquery/dist/jquery.min.js',
   'bower_components/bootstrap/dist/js/bootstrap.min.js',
   'bower_components/angular/angular.min.js',
@@ -29,7 +25,7 @@ var bowerjs = [
   'bower_components/angular-messages/angular-messages.min.js'
 ];
 
-var bowercss = [
+const bowercss = [
   'assets/lib/bootstrap.min.css',
   'bower_components/Ionicons/css/ionicons.min.css',
   'bower_components/font-awesome/css/font-awesome.min.css',
@@ -37,32 +33,21 @@ var bowercss = [
   'bower_components/slick-carousel/slick/slick-theme.css'
 ];
 
-gulp.task('compress', ['clean'], function () {
-  return gulp.src(['index.html', 'assets/fonts/*', 'assets/img/*', 'favicons/*'], {base: './'})
-    .pipe(gzip())
-    .pipe(gulp.dest('.'));
-});
 
-gulp.task('clean', function () {
-  return del(['**/*.gz', 'dist', 'serve']);
-});
-
-gulp.task('vendor', ['clean'], function () {
+gulp.task('vendor', function () {
   gulp.src(bowerjs)
     .pipe(concat('vendor.js'))
     .pipe(uglify())
-    .pipe(gzip())
     .pipe(gulp.dest(path + 'serve'));
 
   gulp.src(bowercss)
     .pipe(concatCss('vendor.css'))
     .pipe(cssnano())
-    .pipe(gzip())
     .pipe(gulp.dest(path + 'serve'));
 });
 
-gulp.task('sass', ['clean'], function () {
-  var sassOptions = {
+gulp.task('sass', function () {
+  let sassOptions = {
     errLogToConsole: true,
     outputStyle: 'compressed',
     indentedSyntax: true
@@ -73,48 +58,39 @@ gulp.task('sass', ['clean'], function () {
     .pipe(sass(sassOptions).on('error', sass.logError))
     .pipe(autoprefixer())
     .pipe(maps.write('.'))
-    .pipe(gzip())
     .pipe(gulp.dest(path + 'serve'))
     .pipe(browserSync.stream());
 });
 
-gulp.task('jade', ['clean'], function () {
+gulp.task('pug', function () {
   gulp.src(['app/**/*.jade'])
     .pipe(rename(function (path) {
       path.dirname = '';
     }))
-    .pipe(jade().on('error', util.log))
-    .pipe(gzip())
+    .pipe(pug().on('error', util.log))
     .pipe(gulp.dest(path + 'serve'));
 });
 
-gulp.task('scripts', ['clean'], function () {
+gulp.task('scripts', function () {
   gulp.src(['app/app.module.js', 'app/**/*.js'])
     .pipe(maps.init())
     .pipe(concat('app.js'))
     .pipe(ngAnnotate())
     .pipe(uglify())
     .pipe(maps.write('.'))
-    .pipe(gzip())
     .pipe(gulp.dest(path + 'serve'));
 });
 
 gulp.task('serve', ['build'], function () {
   browserSync.init({
-    server: './',
-    files: [path + 'serve/*', 'favicons/*', 'assets/*']
-  }, function (err, bs) {
-    bs.addMiddleware('*', middleware, {
-      override: true
-    });
+    server: './'
   });
 
   gulp.watch(paths, ['sass']);
   gulp.watch('app/**/*.js', ['scripts']);
-  gulp.watch('app/**/*.jade', ['jade']);
-  gulp.watch('index.html', ['compress']);
+  gulp.watch('app/**/*.jade', ['pug']);
   gulp.watch(path + '/*js').on('change', browserSync.reload);
-  gulp.watch('index.html.gz').on('change', browserSync.reload);
+  gulp.watch('**/**.html').on('change', browserSync.reload);
 });
 
 gulp.task('serve:dist', ['build'], function () {
@@ -128,8 +104,6 @@ gulp.task('dist', ['build'], function () {
     .pipe(gulp.dest(path));
 });
 
-gulp.task('build', ['compress', 'vendor', 'sass', 'scripts', 'jade'], function (cb) {
-  cb();
-});
+gulp.task('build', ['vendor', 'sass', 'scripts', 'pug']);
 
 gulp.task('default', ['build']);

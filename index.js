@@ -1,14 +1,12 @@
 require('dotenv').config({silent: true});
 
-var express = require('express');
-var app = express();
-var path = require('path');
-var bodyParser = require('body-parser');
-var cors = require('cors');
-var nodemailer = require('nodemailer');
-var compress = require('compression');
+const express = require('express');
+const app = express();
+const path = require('path');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const nodemailer = require('nodemailer');
 
-app.use(compress());
 app.use(bodyParser.json());
 app.use(cors());
 app.set('port', (process.env.PORT || 5000));
@@ -17,12 +15,13 @@ app.use('/serve', express.static(__dirname + '/serve'));
 app.use('/app', express.static(__dirname + '/app'));
 app.use('/assets', express.static(__dirname + '/assets'));
 app.use('/favicons', express.static(__dirname + '/favicons'));
+app.use('/bower_components', express.static(__dirname + '/bower_components'));
 
 app.get('*', function(req, res) {
     res.sendFile('index.html', {root: __dirname});
 });
 
-var transporter = nodemailer.createTransport({
+const transporter = nodemailer.createTransport({
   host: process.env.HOST,
   port: 465,
   secure: true,
@@ -33,13 +32,13 @@ var transporter = nodemailer.createTransport({
 });
 
 app.post('/api/contact', function(req, res) {
-  var info = req.body;
+  let info = req.body;
 
   if(!info.hasOwnProperty('company')) {
     info['company'] = '-';
   }
 
-  var mailOptions = {
+  let mailOptions = {
     from: 'Markev Couriers Info <	' + process.env.SENDER + '>',
     to: process.env.RECEIVER,
     subject: '[Markev Couriers] Client Contact Query',
@@ -79,9 +78,8 @@ app.post('/api/contact', function(req, res) {
   };
 
   transporter.sendMail(mailOptions, function(error){
-    if(error){
+    if(error)
       return console.log(error);
-    }
 
     console.log('Contact Us message sent.');
     res.send();
