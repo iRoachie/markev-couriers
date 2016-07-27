@@ -2,15 +2,19 @@
 
 angular
   .module('markevCouriers')
-  .factory('EmailService', function($http, $location) {
-    var host = $location.$$host !== 'localhost' ? 'http://www.markevcouriers.com' : 'http://localhost:5000';
-
+  .factory('EmailService', function ($http, $location, $q) {
     return {
-      sendEmail: function(info) {
-        $http.post(host + '/api/open-account', info);
-      },
-      contactUs: function(info) {
-        $http.post(host + '/api/contact', info);
+      contactUs: function (info) {
+        var deferred = $q.defer();
+
+        $http.post('https://formspree.io/markevinc@live.com', info)
+          .then(function (data) {
+            deferred.resolve(data);
+          }, function (error) {
+            deferred.reject(error);
+          });
+
+          return deferred.promise;
       }
     };
   });
