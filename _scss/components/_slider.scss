@@ -1,0 +1,92 @@
+.slick-dotted.slick-slider {
+  margin-bottom: 0;
+}
+
+.slider .slick-dots {
+  position: absolute;
+  bottom: 10px;
+}
+
+.slider .slick-dots  li {
+  @include size(11px);
+}
+
+.slider .slick-dots li button {
+  @include size(12px);
+  font-size: 11px;
+
+  &:before {
+    @include size(12px);
+    content: '';
+    opacity: 1;
+    border: 2px solid #fff;
+    border-radius: 50px;
+  }
+}
+
+li {
+  &.slick-active button:before {
+    background: #fff;
+  }
+}
+
+.slide {
+  height: 300px;
+  cursor: pointer;
+  outline: none;
+  background-size: cover;
+  display: flex !important;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+
+  @include respond-to(small) {
+    height: 500px;
+  }
+
+  @include element(dim) {
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  @include element(inner) {
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    top: -20px;
+    padding: 10px;
+    text-align: center;
+
+    @include respond-to(small) {
+      top: -30px;
+      padding: 40px;
+    }
+  }
+
+  @include element(title) {
+    font-size: 3em;
+    font-weight: 300;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
+
+    @include respond-to(small) {
+      font-size: 50px;
+    }
+  }
+
+  @include element(subtitle) {
+    font-size: 1.2em;
+    padding: 14px;
+    background: $primary;
+    border-radius: 1em;
+
+    @include respond-to(small) {
+      font-size: 20px;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.reason {
+  color: #fff;
+  margin-bottom: 40px;
+  text-align: center;
+
+  @include respond-to(small) {
+    margin-bottom: unset;
+  }
+
+  @include element(icon) {
+    font-size: 7em;
+    transition: all ease-in-out 0.2s;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+
+  @include element(title) {
+    font-size: 20px;
+  }
+}

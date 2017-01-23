@@ -1,0 +1,29 @@
+body {
+  font-family: 'PT Sans', sans-serif;
+  color: rgb(98, 97, 97);
+}
+
+p,
+a,
+label,
+.form-control,
+.checkbox,
+.btn {
+  font-size: 16px;
+}
+
+p,
+a {
+  outline: none;
+}
+
+.content {
+  margin-top: 60px;
+}
+
+// Hides jquery-validate messages
+label {
+  &.error {
+    display: none !important;
+  }
+}

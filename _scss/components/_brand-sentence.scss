@@ -1,0 +1,8 @@
+.brand-sentence {
+  text-transform: capitalize;
+  padding: 20px 0;
+
+  @include modifier('black') {
+    color: #000;
+  }
+}

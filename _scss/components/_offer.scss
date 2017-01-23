@@ -1,0 +1,35 @@
+.offer {
+  display: flex;
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 30px;
+  border: 1px solid $primary;
+
+  @include respond-to(small) {
+    height: 150px;
+  }
+
+  @include respond-to(medium) {
+    height: 180px;
+  }
+
+  @include respond-to(large) {
+    height: 200px;
+  }
+
+  @include element(icon) {
+    font-size: 30px;
+    color: $accent;
+  }
+
+  @include element(body) {
+    margin-left: 20px;
+    color: #000;
+  }
+
+  @include element(title) {
+    text-transform: capitalize;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+}

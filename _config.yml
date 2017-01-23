@@ -1,0 +1,10 @@
+name: Markev Couriers
+exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock", "README.md", "LICENSE"]
+baseurl: ""
+permalink: pretty
+main-phone: (246) 548-6905
+secondary-phone: (246) 252-6239
+email: markevinc@live.com
+facebook: https://www.facebook.com/Markev-Couriers-137160806333129/?pnref=lhc
+instagram: https://www.instagram.com/markevcouriers
+twitter: https://twitter.com/markevcouriers

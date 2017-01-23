@@ -1,0 +1,101 @@
+.navbar-default {
+  .navbar-toggle {
+    border: 0;
+
+    &:focus,
+    &:hover {
+      background: #fff;
+    }
+
+    .icon-bar {
+      background-color: $primary;
+    }
+  }
+
+  & .navbar-nav > li > a {
+    color: #000;
+
+    &:hover {
+      color: $primary;
+    }
+
+    &:focus {
+      color: #000;
+    }
+
+    &.open {
+      color: $accent;
+    }
+  }
+}
+
+@media(min-width: 1048px) {
+  .collapse.navbar-collapse {
+    display: flex !important;
+    justify-content: space-between;
+  }
+
+  .barbados-logo {
+    flex-grow: 2;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      display: flex;
+    }
+  }
+}
+
+@media(max-width: 992px) {
+  .left-menu {
+    margin-bottom: 0;
+  }
+
+  .right-menu {
+    margin-top: 0;
+  }
+}
+
+@media(min-width: 1200px) {
+  .barbados-logo img {
+    margin-left: -300px;
+  }
+}
+
+.navbar {
+  background-color: #fff;
+  border: 0;
+  padding-top: 5px;
+  margin-bottom: 0;
+  min-height: 60px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+
+  .barbados-logo {
+    display: none;
+
+    img {
+      width: 161px;
+      height: 60px;
+      margin-top: -5px;
+    }
+  }
+
+  &-brand {
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .logo {
+      height: 40px;
+      cursor: pointer;
+    }
+  }
+
+  &__link {
+    cursor: pointer;
+    font-size: 16px;
+    transition: color ease-in-out 0.2s;
+  }
+}

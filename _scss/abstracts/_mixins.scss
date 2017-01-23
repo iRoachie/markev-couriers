@@ -1,0 +1,68 @@
+@mixin element($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+
+@mixin modifier($element) {
+  &--#{$element} {
+    @content;
+  }
+}
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin min-size($width, $height: $width) {
+  min-width: $width;
+  min-height: $height;
+}
+
+@mixin max-size($width, $height: $width) {
+  max-width: $width;
+  max-height: $height;
+}
+
+@mixin ie9() {
+  .ie9 & {
+    @content;
+  }
+}
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin border($top: null, $right: null, $bottom: null, $left: null) {
+  border-top: $top;
+  border-right: $right;
+  border-bottom: $bottom;
+  border-left: $left;
+}
+
+@mixin breakpoint($breakpoint) {
+  @media (max-width: map($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+@mixin respond-to($breakpoint) {
+  @media (min-width: map($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+/// Make a context based selector a little more friendly
+/// @author Hugo Giraudel
+/// @param {String} $context
+@mixin when-inside($context) {
+  #{$context} & {
+    @content;
+  }
+}

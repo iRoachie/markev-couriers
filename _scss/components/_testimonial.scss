@@ -1,0 +1,47 @@
+.testimonial {
+  margin-bottom: 30px;
+  text-align: center;
+
+  @include respond-to(small) {
+    display: flex;
+    text-align: left;
+  }
+
+  @include element(thumbnail) {
+    @include size(120px);
+    border-radius: 50%;
+    border: 2px solid #fff;
+  }
+
+  @include element(content) {
+    margin-top: 5px;
+    color: #fff;
+    margin-top: 30px;
+
+    @include respond-to(small) {
+      margin-left: 30px;
+      margin-top: unset;
+    }
+  }
+
+  @include element(text) {
+    font-size: 18px;
+    font-style: italic;
+  }
+
+  @include element(quote) {
+    font-size: 30px;
+    margin-right: 4px;
+    line-height: 0.2;
+  }
+
+  @include element(author) {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #e0ffff;
+
+    &:hover {
+      color: #e0ffff;
+    }
+  }
+}

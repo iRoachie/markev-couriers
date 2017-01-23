@@ -1,0 +1,11 @@
+.section {
+  padding: 20px 0;
+
+  @include modifier(light) {
+    background: #f5fbff;
+  }
+
+  @include modifier(primary) {
+    background: $primary;
+  }
+}

@@ -1,0 +1,7 @@
+.header {
+  color: #fff;
+
+  @include modifier(dark) {
+    color: #000;
+  }
+}

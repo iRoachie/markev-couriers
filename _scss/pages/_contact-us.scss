@@ -1,0 +1,17 @@
+.contact-us {
+  @include element(header) {
+    background-image: url('../assets/images/contact-us.jpg');
+  }
+
+  .btn.btn-primary {
+    transition: 0.5s;
+  }
+
+  label {
+    margin-bottom: 7px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.87);
+  }
+}
