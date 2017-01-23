@@ -9,8 +9,7 @@
     "url": "https://github.com/iRoachie/markev-couriers"
   },
   "scripts": {
-    "start": "node index.js",
-    "postinstall": "gulp heroku && jekyll build"
+    "start": "node index.js"
   },
   "author": "Kyle Roach",
   "license": "SEE LICENSE IN LICENSE",
