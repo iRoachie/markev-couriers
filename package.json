@@ -9,7 +9,7 @@
     "url": "https://github.com/iRoachie/markev-couriers"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node_modules/gulp/bin/gulp.js production && node index.js"
   },
   "author": "Kyle Roach",
   "license": "SEE LICENSE IN LICENSE",
