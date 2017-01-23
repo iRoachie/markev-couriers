@@ -104,4 +104,12 @@ gulp.task('production', () => {
   })
 });
 
+gulp.task('heroku', () => {
+  development = false;
+  return new Promise(resolve => {
+    run(['clean'], ['sass', 'scripts'], resolve)
+  });
+});
+
+
 gulp.task('default', ['production']);

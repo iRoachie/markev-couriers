@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "postinstall": "gulp production"
+    "postinstall": "gulp heroku && jekyll build"
   },
   "author": "Kyle Roach",
   "license": "SEE LICENSE IN LICENSE",
