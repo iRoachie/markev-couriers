@@ -9,6 +9,7 @@
 
   @include element(thumbnail) {
     @include size(120px);
+    @include min-size(120px);
     border-radius: 50%;
     border: 2px solid #fff;
   }
