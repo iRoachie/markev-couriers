@@ -10,6 +10,7 @@ const source = require('vinyl-source-stream');
 const babelify = require('babelify');
 const buffer = require('vinyl-buffer');
 const run = require('run-sequence');
+const guppy = require('git-guppy')(gulp);
 
 const $ = gulpLoadPlugins();
 const spawn = cp.spawn;
@@ -103,5 +104,7 @@ gulp.task('production', () => {
     run(['build'], resolve);
   })
 });
+
+gulp.task('pre-commit', ['production']);
 
 gulp.task('default', ['production']);
