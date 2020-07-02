@@ -1,13 +1,5 @@
-/// <reference path="../../node_modules/@types/jquery/index.d.ts" />
-
-$(document).ready(() => {
-  new MarkevCouriers();
-});
-
 class MarkevCouriers {
   constructor() {
-    $('#date').text(new Date().getFullYear());
-
     switch (location.pathname) {
       case '/':
         this._slider();
@@ -20,7 +12,8 @@ class MarkevCouriers {
 
   _slider() {
     $('.slider').slick({
-      autoplay: 4000,
+      autoplay: true,
+      autoplaySpeed: 4000,
       dots: true,
       slidesToShow: 1,
       arrows: false,
@@ -30,11 +23,21 @@ class MarkevCouriers {
   _scroller() {
     $('.scroller').click((e) => {
       e.preventDefault();
-      const id = $(e.currentTarget).attr('href').replace('/', '');
+      const id = $(e.currentTarget).attr('href')?.replace('/', '');
+
+      if (!id) {
+        return;
+      }
+
+      const offset = $(id).offset();
+
+      if (!offset) {
+        return;
+      }
 
       $('html, body').animate(
         {
-          scrollTop: $(id).offset().top - 60,
+          scrollTop: offset.top - 60,
         },
         600
       );
@@ -61,3 +64,7 @@ class MarkevCouriers {
     });
   }
 }
+
+$(document).ready(() => {
+  new MarkevCouriers();
+});

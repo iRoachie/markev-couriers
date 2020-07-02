@@ -837,7 +837,14 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
-"@types/jquery@^3.5.0":
+"@types/jquery.validation@^1.16.6":
+  version "1.16.6"
+  resolved "https://registry.yarnpkg.com/@types/jquery.validation/-/jquery.validation-1.16.6.tgz#d6916af1c8fd858d5da11f81b14c80d75762f30e"
+  integrity sha512-RA2bYZELFFmA17mxarjKdCtsn8EH0dOKgj7tpJmeLREkMaOj4H1PbD3UIBuAGQ3Yn8o5748l5IWUmWoAoRYgIw==
+  dependencies:
+    "@types/jquery" "*"
+
+"@types/jquery@*", "@types/jquery@^3.5.0":
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.5.0.tgz#ccb7dfd317d02d4227dd3803c75297d0c10dad68"
   integrity sha512-C7qQUjpMWDUNYQRTXsP5nbYYwCwwgy84yPgoTT7fPN69NH92wLeCtFaMsWeolJD1AF/6uQw3pYt62rzv83sMmw==
@@ -858,6 +865,13 @@
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/@types/sizzle/-/sizzle-2.3.2.tgz#a811b8c18e2babab7d542b3365887ae2e4d9de47"
   integrity sha512-7EJYyKTL7tFR8+gDbB6Wwz/arpGa0Mywk1TJbNzKzHtzbwVmY4HR9WqS5VV7dsBUKQmPNr192jHr/VpBluj/hg==
+
+"@types/slick-carousel@^1.6.34":
+  version "1.6.34"
+  resolved "https://registry.yarnpkg.com/@types/slick-carousel/-/slick-carousel-1.6.34.tgz#ac8aa7c3175070baca9477c353724542a8ed74f7"
+  integrity sha512-LdsK0BLNYqe3uBuWCBwzGQVy+8g8LDe3u1XGlaOelrDD07cjJGVVoKBSyKieK4dmfqilmP+DJp7lNRaTI7rRAg==
+  dependencies:
+    "@types/jquery" "*"
 
 abbrev@1:
   version "1.1.1"
@@ -5291,6 +5305,11 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
+
+typescript@^3.9.6:
+  version "3.9.6"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.6.tgz#8f3e0198a34c3ae17091b35571d3afd31999365a"
+  integrity sha512-Pspx3oKAPJtjNwE92YS05HQoY7z2SFyOpHo9MqJor3BXAGNaPUs83CuVp9VISFkSjyRfiTpmKuAYGJB7S7hOxw==
 
 ua-parser-js@0.7.17:
   version "0.7.17"
