@@ -12,7 +12,8 @@
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "start": "gulp serve",
-    "build": "gulp build"
+    "build": "gulp build",
+    "pre": "yarn build && serve _site"
   },
   "dependencies": {
     "core-js": "3"
@@ -35,6 +36,7 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.0",
     "prettier": "^2.0.5",
+    "serve": "^11.3.2",
     "typescript": "^3.9.6"
   },
   "browserslist": "> 0.25%, not dead"
