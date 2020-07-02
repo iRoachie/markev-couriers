@@ -90,7 +90,7 @@ exports.serve = series(local, exports.build, () => {
   });
 
   watch('src/**/*.scss', sass);
-  watch(['src/**/*.html', 'src/**/*.yml'], jekyllBuild);
+  watch(['src/**/*.html', 'src/**/*.yml', 'src/assets/**/*'], jekyllBuild);
   watch('src/_scripts/*.js', series(scripts, jekyllBuild));
 
   watch('_site/**/*', reload);
