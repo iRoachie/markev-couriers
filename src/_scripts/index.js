@@ -1,12 +1,14 @@
+/// <reference path="../../node_modules/@types/jquery/index.d.ts" />
+
 $(document).ready(() => {
   new MarkevCouriers();
-})
+});
 
 class MarkevCouriers {
   constructor() {
     $('#date').text(new Date().getFullYear());
 
-    switch(location.pathname) {
+    switch (location.pathname) {
       case '/':
         this._slider();
         this._scroller();
@@ -21,35 +23,41 @@ class MarkevCouriers {
       autoplay: 4000,
       dots: true,
       slidesToShow: 1,
-      arrows: false
-    })
+      arrows: false,
+    });
   }
 
   _scroller() {
-    $('.scroller').click(e => {
+    $('.scroller').click((e) => {
       e.preventDefault();
       const id = $(e.currentTarget).attr('href').replace('/', '');
 
-      $('html, body').animate({
-        scrollTop: $(id).offset().top - 60
-      }, 600);
-    })
+      $('html, body').animate(
+        {
+          scrollTop: $(id).offset().top - 60,
+        },
+        600
+      );
+    });
   }
 
   _contactForm() {
     $('#contact').validate({
-      submitHandler: function(form) {
+      submitHandler: () => {
         $.ajax({
-          url: "https://formspree.io/markevinc@live.com",
-          method: "POST",
+          url: 'https://formspree.io/markevinc@live.com',
+          method: 'POST',
           data: $('#contact').serialize(),
-          dataType: "json"
+          dataType: 'json',
         });
 
-        $('#submit-button').text('SENT').css('background-color', '#3c763d').attr('disabled', 'true')
+        $('#submit-button')
+          .text('SENT')
+          .css('background-color', '#3c763d')
+          .attr('disabled', 'true');
 
         return false;
-      }
+      },
     });
   }
 }
