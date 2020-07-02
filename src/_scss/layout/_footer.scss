@@ -22,23 +22,6 @@
     width: 300px;
   }
 
-  &__social {
-    margin-top: 30px;
-
-    a {
-      transition: color ease-in-out 0.2s;
-
-      &:hover {
-        color: $primary;
-      }
-    }
-
-    .fa {
-      font-size: 36px;
-      margin: 0 20px;
-    }
-  }
-
   &__hours,
   &__contact {
     margin-top: 30px;
@@ -47,16 +30,6 @@
       font-size: 20px;
       color: $primary;
       margin-bottom: 20px;
-    }
-
-    .fa {
-      margin-top: 4px;
-      font-size: 24px;
-      color: $primary;
-
-      &.fa-mobile {
-        font-size: 36px;
-      }
     }
   }
 
@@ -67,27 +40,49 @@
       color: #000;
     }
   }
+}
 
-  &__contact {
-    &__item {
-      margin: 20px 0;
+.footer__social {
+  margin-top: 30px;
 
-      .col-xs-2,
-      .col-xs-10 {
-        padding-left: 0;
-      }
+  a {
+    transition: color ease-in-out 0.2s;
+
+    &:hover {
+      color: $primary;
     }
+  }
 
-    &__field {
-      color: #000;
-      font-family: 'Open Sans', sans-serif;
-      font-weight: 600;
-      font-size: 16px;
-      margin-bottom: 4px;
+  svg {
+    width: 30px;
+    height: 30px;
+  }
+}
 
-      ~ p {
-        margin-bottom: 0;
-      }
-    }
+.footer__contact__item {
+  margin: 20px 0;
+  align-items: flex-start;
+}
+
+.footer__contact__icon {
+  width: 24px;
+  height: auto;
+  margin-right: 1rem;
+  margin-top: 0.375rem;
+
+  path {
+    fill: $primary;
+  }
+}
+
+.footer__contact__field {
+  color: #000;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 4px;
+
+  ~ p {
+    margin-bottom: 0;
   }
 }

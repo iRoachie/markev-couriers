@@ -1,3 +1,7 @@
+:root {
+  font-size: 16px;
+}
+
 body {
   font-family: 'PT Sans', sans-serif;
   color: rgb(98, 97, 97);
@@ -26,4 +30,29 @@ label {
   &.error {
     display: none !important;
   }
+}
+
+.flex {
+  display: flex;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
