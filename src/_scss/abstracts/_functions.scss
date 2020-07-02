@@ -9,8 +9,8 @@
 
   // If we were given a map we need to grab the value
   // of the key that is passed or the base key
-  @if(type-of($map-value) == map) {
-    @if($map-key) {
+  @if (type-of($map-value) == map) {
+    @if ($map-key) {
       $map-value: map-get($map, $map-name, $map-key);
     } @else {
       $map-value: map-get($map, $map-name, base);

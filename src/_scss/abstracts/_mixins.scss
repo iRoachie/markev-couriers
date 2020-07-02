@@ -31,7 +31,13 @@
   }
 }
 
-@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+@mixin position(
+  $position,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null
+) {
   position: $position;
   top: $top;
   right: $right;
