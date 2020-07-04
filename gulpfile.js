@@ -6,8 +6,8 @@ const gulpIf = require('gulp-if');
 const gulpSass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
-const babel = require('gulp-babel');
-const rename = require('gulp-rename');
+const webpackStream = require('webpack-stream');
+const webpack = require('webpack');
 
 let development = false;
 
@@ -27,8 +27,6 @@ const local = (cb) => {
  * @param {() => any} cb
  */
 const jekyllBuild = (cb) => {
-  server.notify('<span style="color: grey">Running:</span> jekyll build');
-
   spawnSync('jekyll', ['build', '-s', './src', '-d', '_site'], {
     stdio: 'inherit',
   });
@@ -71,11 +69,40 @@ const sass = () => {
 };
 
 const scripts = () => {
-  return src(['src/_scripts/index.js'])
+  return src(['src/_scripts/*.js'])
     .pipe(gulpIf(development, sourcemaps.init()))
-    .pipe(babel())
+    .pipe(
+      webpackStream({
+        mode: development ? 'development' : 'production',
+        entry: {
+          home: './src/_scripts/home.js',
+          contact: './src/_scripts/contact.js',
+          global: './src/_scripts/global.js',
+        },
+        output: {
+          filename: '[name].js',
+          publicPath: 'dist/',
+        },
+        plugins: [
+          new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+          }),
+        ],
+        module: {
+          rules: [
+            {
+              test: /\.m?js$/,
+              exclude: /(node_modules|bower_components)/,
+              use: {
+                loader: 'babel-loader',
+              },
+            },
+          ],
+        },
+      })
+    )
     .pipe(gulpIf(development, sourcemaps.write()))
-    .pipe(rename('scripts.js'))
     .pipe(dest('src/dist'));
 };
 
@@ -86,6 +113,7 @@ exports.serve = series(local, exports.build, () => {
     server: {
       baseDir: '_site',
     },
+    notify: false,
     open: false,
   });
 

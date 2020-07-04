@@ -16,28 +16,34 @@
     "pre": "yarn build && serve _site"
   },
   "dependencies": {
-    "core-js": "3"
+    "bootstrap": "3",
+    "core-js": "3",
+    "jquery": "^3.5.1",
+    "jquery-smooth-scroll": "^2.2.0",
+    "jquery-validation": "^1.19.2",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@babel/core": "^7.10.4",
+    "@babel/plugin-proposal-optional-chaining": "^7.10.4",
     "@babel/preset-env": "^7.10.4",
     "@types/jquery": "^3.5.0",
     "@types/jquery.validation": "^1.16.6",
     "@types/slick-carousel": "^1.6.34",
+    "babel-loader": "^8.1.0",
     "browser-sync": "^2.26.7",
     "del": "^5.1.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
-    "gulp-babel": "^8.0.0",
-    "gulp-babel-minify": "^0.5.1",
     "gulp-if": "^3.0.0",
-    "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.0",
     "prettier": "^2.0.5",
     "serve": "^11.3.2",
-    "typescript": "^3.9.6"
+    "typescript": "^3.9.6",
+    "webpack": "^4.43.0",
+    "webpack-stream": "^5.2.1"
   },
   "browserslist": "> 0.25%, not dead"
 }
