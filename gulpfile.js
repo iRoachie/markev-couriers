@@ -9,6 +9,8 @@ const sourcemaps = require('gulp-sourcemaps');
 const webpackStream = require('webpack-stream');
 const webpack = require('webpack');
 const gulpPurgeCSS = require('gulp-purgecss');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+  .BundleAnalyzerPlugin;
 
 let development = false;
 
@@ -78,7 +80,6 @@ const scripts = () => {
         entry: {
           home: './src/_scripts/home.js',
           contact: './src/_scripts/contact.js',
-          global: './src/_scripts/global.js',
         },
         output: {
           filename: '[name].js',
@@ -89,12 +90,26 @@ const scripts = () => {
             $: 'jquery',
             jQuery: 'jquery',
           }),
+          new BundleAnalyzerPlugin({
+            analyzerMode: process.env.BUNDLE ? 'server' : 'disabled',
+          }),
         ],
+        optimization: {
+          splitChunks: {
+            cacheGroups: {
+              vendor: {
+                test: /[\\/]node_modules[\\/](jquery|bootstrap)[\\/]/,
+                name: 'vendor',
+                chunks: 'all',
+              },
+            },
+          },
+        },
         module: {
           rules: [
             {
               test: /\.m?js$/,
-              exclude: /(node_modules|bower_components)/,
+              exclude: /(node_modules)/,
               use: {
                 loader: 'babel-loader',
               },

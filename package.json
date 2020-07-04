@@ -13,6 +13,7 @@
   "scripts": {
     "start": "gulp serve",
     "build": "gulp build",
+    "build:bundle": "BUNDLE=true gulp build",
     "pre": "yarn build && serve _site"
   },
   "dependencies": {
@@ -44,6 +45,7 @@
     "serve": "^11.3.2",
     "typescript": "^3.9.6",
     "webpack": "^4.43.0",
+    "webpack-bundle-analyzer": "^3.8.0",
     "webpack-stream": "^5.2.1"
   },
   "browserslist": "> 0.25%, not dead"

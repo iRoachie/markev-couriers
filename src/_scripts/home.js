@@ -1,6 +1,8 @@
 import 'slick-carousel';
 import 'jquery-smooth-scroll';
 
+import './global';
+
 $(document).ready(() => {
   $('.slider').slick({
     autoplay: true,

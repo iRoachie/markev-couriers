@@ -1,5 +1,7 @@
 import 'jquery-validation';
 
+import './global';
+
 $(document).ready(() => {
   $('#contact').validate({
     submitHandler: () => {
