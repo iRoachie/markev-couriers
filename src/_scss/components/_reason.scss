@@ -6,17 +6,23 @@
   @include respond-to(small) {
     margin-bottom: unset;
   }
+}
 
-  @include element(icon) {
-    font-size: 7em;
-    transition: all ease-in-out 0.2s;
+.reason__icon {
+  font-size: 7em;
+  transition: all ease-in-out 0.2s;
 
-    &:hover {
-      color: $accent;
-    }
+  &:hover {
+    color: $accent;
   }
+}
 
-  @include element(title) {
-    font-size: 20px;
-  }
+.reason__title {
+  font-size: 20px;
+}
+
+.reason__text sup {
+  font-size: 10px;
+  opacity: 0.8;
+  margin-left: 0.125rem;
 }
