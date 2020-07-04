@@ -8,6 +8,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
 const webpackStream = require('webpack-stream');
 const webpack = require('webpack');
+const gulpPurgeCSS = require('gulp-purgecss');
 
 let development = false;
 
@@ -106,7 +107,18 @@ const scripts = () => {
     .pipe(dest('src/dist'));
 };
 
-exports.build = series(clean, parallel(sass, scripts), jekyllBuild);
+const purgeCSS = () => {
+  return src('_site/dist/main.css')
+    .pipe(
+      // @ts-ignore
+      gulpPurgeCSS({
+        content: ['_site/**/*.html', '_site/dist/*.js'],
+      })
+    )
+    .pipe(dest('_site/dist'));
+};
+
+exports.build = series(clean, parallel(sass, scripts), jekyllBuild, purgeCSS);
 
 exports.serve = series(local, exports.build, () => {
   server.init({
