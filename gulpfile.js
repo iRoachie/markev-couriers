@@ -30,9 +30,13 @@ const local = (cb) => {
  * @param {() => any} cb
  */
 const jekyllBuild = (cb) => {
-  spawnSync('jekyll', ['build', '-s', './src', '-d', '_site'], {
-    stdio: 'inherit',
-  });
+  spawnSync(
+    'bundle',
+    ['exec', 'jekyll', 'build', '-s', './src', '-d', '_site'],
+    {
+      stdio: 'inherit',
+    }
+  );
 
   cb();
 };
