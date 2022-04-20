@@ -128,3 +128,5 @@ dist
 
 .jekyll-cache
 .firebase
+
+vendor
