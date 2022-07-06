@@ -21,7 +21,7 @@
     "core-js": "3",
     "jquery": "^3.5.1",
     "jquery-smooth-scroll": "^2.2.0",
-    "jquery-validation": "^1.19.3",
+    "jquery-validation": "^1.19.5",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
